@@ -1,0 +1,3 @@
+body {
+    overflow: overlay; /* Muestra una barra de desplazamiento solo cuando es necesario */
+  }
