@@ -9,7 +9,7 @@ const ParticlesBackground = () => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async () => {}, []);
+  const particlesLoaded = useCallback(async () => { }, []);
 
   return (
     <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-gray-400 to-gray-200 -z-20">
@@ -19,7 +19,7 @@ const ParticlesBackground = () => {
         loaded={particlesLoaded}
         options={{
           fullscreen: { enable: false },
-          fpsLimit: 120,
+          fpsLimit: 60,
           interactivity: {
             events: {
               onClick: {

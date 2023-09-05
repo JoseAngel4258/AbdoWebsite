@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
-import Navbar from "./Navbar";
 
 function Hero() {
   const slides = [
@@ -52,11 +51,11 @@ function Hero() {
   }, [currentIndex]);
 
   return (
-    <div className="max-w-[1400px] h-[100vh] w-full m-auto pt-24 pb-12 px-4 relative mt-5 group snap-center">
-      <Navbar />
+    <div className=" h-[100vh] w-screen relative group snap-center">
       <div
+        id="inicio"
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full rounded-xl bg-center bg-cover duration-500 shadow-lg"
+        className="w-full h-full  bg-center bg-cover duration-500 shadow-lg"
       ></div>
       {/* Left Arrow */}
       <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
@@ -66,14 +65,13 @@ function Hero() {
       <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
-      <div className="flex top-4 justify-center py-2">
+      <div className="fixed inset-x-0 bottom-5 flex justify-center">
         {slides.map((_, slideIndex) => (
           <div
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
-            className={`text-2xl cursor-pointer ${
-              slideIndex === currentIndex ? "text-black" : "text-gray-300"
-            }`}
+            className={`text-2xl cursor-pointer ${slideIndex === currentIndex ? "text-black" : "text-gray-300"
+              }`}
           >
             <RxDotFilled />
           </div>

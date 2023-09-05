@@ -11,6 +11,7 @@ import WhatWeDo from "./components/WhatWeDo";
 import WhatWeSell from "./components/WhatWeSell";
 import WhoWeAre from "./components/WhoWeAre";
 import PlansCard from "./components/PlansCard";
+import Navbar from "./components/Navbar.jsx"
 
 const products = [
   {
@@ -35,20 +36,23 @@ const App = () => {
   };
 
   return (
-    <div className="h-[100vh] font-satoshi md:snap-y md:snap-mandatory md:overflow-auto scroll-smooth">
+    <div className="h-[100vh] font-satoshi md:snap-y md:snap-mandatory md:overflow-auto scroll-smooth bg-gradient-to-b from-gray-800 to-gray-200">
+
       <Hero />
-      <div>
+      <Navbar />
+
+
+      {/*<About />
+        <About2 />
+        <About3 />
         <WhatWeDo />
         <WhoWeAre />
         <WhatWeSell />
-        <About />
-        <About2 />
-        <About3 />
-        <InstallationService />
-        <PlansCard />
-        <FAQSection />
-        <ParticlesBackground />
-      </div>
+      <InstallationService />
+      <PlansCard />
+      <FAQSection />
+      <ParticlesBackground />*/}
+
     </div>
   );
 };

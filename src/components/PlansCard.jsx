@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const PlansCard = () => {
   return (
-    <div className="h-[100vh] w-screen md:snap-center">
+    <div id="service" className="h-[100vh] w-screen md:snap-center">
       <div class="flex min-h-screen items-center justify-center bg-neutral-800">
         <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
