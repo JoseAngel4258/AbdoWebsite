@@ -1,14 +1,11 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
-  const [mostrarBotonesExtras, setMostrarBotonesExtras] = useState(false);
+  const [showDiv, setShowDiv] = useState(false);
 
-  const mostrarBotonesExtrasHandler = () => {
-    setMostrarBotonesExtras(true);
-  };
-
-  const ocultarBotonesExtrasHandler = () => {
-    setMostrarBotonesExtras(false);
+  const toggleDiv = () => {
+    setShowDiv(!showDiv);
   };
 
   return (
@@ -23,23 +20,39 @@ const Navbar = () => {
           <span className="text-xl font-semibold">ABDO77</span>
         </a>
       </div>
-      <div className="flex space-x-6">
-        <span
-          className="relative group"
-          onMouseEnter={mostrarBotonesExtrasHandler}
-          onMouseLeave={ocultarBotonesExtrasHandler}
-        >
+      <div
+        className="flex group gap-3"
+        onMouseEnter={toggleDiv}
+        onMouseLeave={toggleDiv}
+      >
+        <span className="relative peer">
           Botón Principal
-          {mostrarBotonesExtras && (
-            <div className="absolute left-0 mt-3 p-2 space-y-2 bg-white rounded-lg shadow-lg">
-              {/* Contenido adicional */}
-              <button className="block hover:bg-gray-200">Opción 1</button>
-              <button className="block hover:bg-gray-200">Opción 2</button>
-              <button className="block hover:bg-gray-200">Opción 3</button>
-            </div>
-          )}
+          <AnimatePresence>
+            {showDiv && (
+              <motion.div
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -60, transition: { duration: 0.2 } }}
+                transition={{ duration: 0.5 }}
+                className="bg-white h-[80vh] fixed top-0 left-0 right-0 -z-10"
+              >
+                <button className="block hover:bg-gray-200 bg-gray-950">
+                  Opción 1
+                </button>
+                <button className="block hover:bg-gray-200 bg-gray-950">
+                  Opción 2
+                </button>
+                <button className="block hover:bg-gray-200 bg-gray-950">
+                  Opción 3
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </span>
-        <a href="#question" className="hover:text-black transition-colors duration-500">
+        <a
+          href="#question"
+          className="hover:text-black transition-colors duration-500"
+        >
           Preguntas
         </a>
       </div>
