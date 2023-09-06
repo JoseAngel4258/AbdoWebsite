@@ -1,0 +1,33 @@
+.append:hover::after {
+    content: "Contacto";
+    opacity: 1;
+    transform: translatex(0);
+    animation: revealText .45s steps(7, end); /* Desactivar la animación de letras */
+}
+
+@keyframes revealText {
+    0% {
+content: "C";
+    }
+    14% {
+    content: "Co";
+    }
+    29% {
+    content: "Con";
+    }
+    43% {
+    content: "Cont";
+    }
+    57% {
+    content: "Conta";
+    }
+    71% {
+    content: "Contac";
+    }
+    86% {
+    content: "Contact";
+    }
+    100% {
+    content: "Contacto";
+    }
+}

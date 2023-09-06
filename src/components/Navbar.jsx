@@ -1,10 +1,14 @@
-import {useState} from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Contact from "./contact/Contact";
+import './contact/contact.css'
 
 const Navbar = () => {
   const [showDiv, setShowDiv] = useState(false);
   const [showPlans, setShowPlans] = useState(false);
   const [showService, setShowServices] = useState(false);
+  const [showModalContact, setShowModalContact] = useState(false);
+
 
   const showInfoPlans = () => {
     setShowPlans(true)
@@ -23,6 +27,10 @@ const Navbar = () => {
   const toggleDiv = () => {
     setShowDiv(!showDiv);
   };
+
+  const toggleModalHandler = () => {
+    setShowModalContact(!showModalContact)
+  }
 
   return (
     <nav className="flex flex-row justify-between items-center py-5 px-8 text-[17px] fixed w-full z-20 top-0 left-0 h-[58.5px] min-[1080px]:h-[75px] font-semibold bg-transparent text-white">
@@ -63,12 +71,12 @@ const Navbar = () => {
             {
               showPlans && (
                 <div className=""
-              >
-                {/* Contenido personalizado que deseas mostrar */}
-                <p>Plan 1</p>
-                <p>Plan 2</p>
-                <p>Plan 3</p>
-              </div>
+                >
+                  {/* Contenido personalizado que deseas mostrar */}
+                  <p>Plan 1</p>
+                  <p>Plan 2</p>
+                  <p>Plan 3</p>
+                </div>
               )}
 
           </li>
@@ -86,12 +94,33 @@ const Navbar = () => {
               </div>}</li>
         </ul>
       </div>
-      <div className="flex space-x-4">
-        <button className="flex items-center space-x-2 bg-white border border-green-500 hover:bg-green-500 text-green-500 hover:px-6 py-3 rounded-full font-semibold shadow-md transition duration-500">
+      <div className="flex gap-2 space-x-4 append hover:bg-green-500 duration-300 hover:p-2 rounded-md hover:scale-125 text-gray-100 font-sans" onClick={toggleModalHandler} >
+        <button className="rounded-full font-semibold shadow-md transition duration-500 hover:scale-150">
           <img className="h-6" src="./img/whatsapp.png" alt="Contacto" />
-          <span>Contacto</span>
         </button>
       </div>
+      {/* Modal */}
+      {showModalContact && (
+        <div className="fixed top-20 right-10 flex items-center justify-center z-100 bg-black bg-transparent">
+          <div className="bg-white p-4 rounded-lg shadow-lg">
+            {/* Contenido del modal */}
+            <Contact />
+            <div className="flex justify-around">
+            <button
+              onClick={toggleModalHandler}
+              className="block mt-4 bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 text-black"
+            >
+              Cancelar
+            </button><button
+              
+              className="block mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-red-800 text-black"
+            >
+              Enviar
+            </button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
