@@ -1,8 +1,24 @@
-import React, { useState } from "react";
+import {useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [showDiv, setShowDiv] = useState(false);
+  const [showPlans, setShowPlans] = useState(false);
+  const [showService, setShowServices] = useState(false);
+
+  const showInfoPlans = () => {
+    setShowPlans(true)
+  }
+  const hideInfoPlans = () => {
+    setShowPlans(false)
+  }
+
+  const showInfoService = () => {
+    setShowServices(true)
+  }
+  const hideInfoService = () => {
+    setShowServices(false)
+  }
 
   const toggleDiv = () => {
     setShowDiv(!showDiv);
@@ -26,7 +42,6 @@ const Navbar = () => {
         onMouseLeave={toggleDiv}
       >
         <span className="relative peer">
-          Botón Principal
           <AnimatePresence>
             {showDiv && (
               <motion.div
@@ -34,27 +49,42 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -60, transition: { duration: 0.2 } }}
                 transition={{ duration: 0.5 }}
-                className="bg-white h-[80vh] fixed top-0 left-0 right-0 -z-10"
+                className="bg-white min-h-[20vh] max-h-full fixed top-0 left-0 right-0 -z-10"
               >
-                <button className="block hover:bg-gray-200 bg-gray-950">
-                  Opción 1
-                </button>
-                <button className="block hover:bg-gray-200 bg-gray-950">
-                  Opción 2
-                </button>
-                <button className="block hover:bg-gray-200 bg-gray-950">
-                  Opción 3
-                </button>
               </motion.div>
             )}
           </AnimatePresence>
         </span>
-        <a
-          href="#question"
-          className="hover:text-black transition-colors duration-500"
-        >
-          Preguntas
-        </a>
+        <ul className="flex relative">
+          <li className="px-4 hover:text-black"
+            onMouseEnter={showInfoPlans}
+            onMouseLeave={hideInfoPlans}>Planes
+
+            {
+              showPlans && (
+                <div className=""
+              >
+                {/* Contenido personalizado que deseas mostrar */}
+                <p>Plan 1</p>
+                <p>Plan 2</p>
+                <p>Plan 3</p>
+              </div>
+              )}
+
+          </li>
+
+          <li className="px-4 hover:text-black"
+            onMouseEnter={showInfoService}
+            onMouseLeave={hideInfoService}>Service
+            {
+              showService && <div className=""
+              >
+                {/* Contenido personalizado que deseas mostrar */}
+                <p>Servicio 1</p>
+                <p>Servicio 2</p>
+                <p>Servicio 3</p>
+              </div>}</li>
+        </ul>
       </div>
       <div className="flex space-x-4">
         <button className="flex items-center space-x-2 bg-white border border-green-500 hover:bg-green-500 text-green-500 hover:px-6 py-3 rounded-full font-semibold shadow-md transition duration-500">
