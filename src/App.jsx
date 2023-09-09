@@ -12,6 +12,7 @@ import WhatWeSell from "./components/WhatWeSell";
 import WhoWeAre from "./components/WhoWeAre";
 import PlansCard from "./components/PlansCard";
 import Navbar from "./components/Navbar.jsx"
+import videoSource from "./assets/fondobg.mp4";
 
 const products = [
   {
@@ -36,13 +37,14 @@ const App = () => {
   };
 
   return (
-    <div className="h-[100vh] font-satoshi md:snap-y md:snap-mandatory md:overflow-auto scroll-smooth bg-gradient-to-b from-gray-800 to-gray-200">
+    <div className="h-[100vh] font-satoshi md:snap-y md:snap-mandatory md:overflow-auto fondoBg">
 
-      <Hero />
       <Navbar />
+      <video autoPlay muted loop className="w-[100vw] h-screen object-cover"><source src={videoSource} type="video/mp4" /></video>
 
 
       {/*<About />
+      <Hero />
         <About2 />
         <About3 />
         <WhatWeDo />

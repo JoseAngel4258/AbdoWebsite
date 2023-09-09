@@ -1,33 +1,72 @@
 .append:hover::after {
-    content: "Contacto";
-    opacity: 1;
-    transform: translatex(0);
-    animation: revealText .45s steps(7, end); /* Desactivar la animación de letras */
+  content: "Contacto";
+  opacity: 1;
+  transform: translatex(0);
+  animation: revealText 0.75s steps(7, end); /* Desactivar la animación de letras */
+}
+.append:not(:hover)::after {
+  content: "";
+  opacity: 1;
+  transform: translatex(0);
+  animation: hideText 0.45s steps(8, start); /* Animación inversa cuando se quita el hover */
 }
 
 @keyframes revealText {
-    0% {
-content: "C";
-    }
-    14% {
+  0% {
+    content: "";
+  }
+  12.5% {
+    content: "C";
+  }
+  25% {
     content: "Co";
-    }
-    29% {
+  }
+  37.5% {
     content: "Con";
-    }
-    43% {
+  }
+  50% {
     content: "Cont";
-    }
-    57% {
+  }
+  62.5% {
     content: "Conta";
-    }
-    71% {
+  }
+  75% {
     content: "Contac";
-    }
-    86% {
+  }
+  87.5% {
     content: "Contact";
-    }
-    100% {
+  }
+  100% {
     content: "Contacto";
-    }
+  }
+}
+
+@keyframes hideText {
+  0% {
+    content: "Contacto";
+  }
+  12.5% {
+    content: "Contact";
+  }
+  25% {
+    content: "Contac";
+  }
+  37.5% {
+    content: "Conta";
+  }
+  50% {
+    content: "Cont";
+  }
+  62.5% {
+    content: "Con";
+  }
+  75% {
+    content: "Co";
+  }
+  87.5% {
+    content: "C";
+  }
+  100% {
+    content: "";
+  }
 }

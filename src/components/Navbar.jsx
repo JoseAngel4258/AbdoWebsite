@@ -33,7 +33,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="flex flex-row justify-between items-center py-5 px-8 text-[17px] fixed w-full z-20 top-0 left-0 h-[58.5px] min-[1080px]:h-[75px] font-semibold bg-transparent text-white">
+    <nav className="flex flex-row justify-between items-center  py-5 px-8 text-[17px] fixed w-full z-40 top-0 left-0 h-[58.5px] min-[1080px]:h-[75px] font-semibold bg-transparent text-white">
       <div className="flex items-center">
         <a className="flex items-center space-x-2">
           <img
@@ -63,7 +63,7 @@ const Navbar = () => {
             )}
           </AnimatePresence>
         </span>
-        <ul className="flex relative">
+        <ul className="flex ">
           <li className="px-4 hover:text-black"
             onMouseEnter={showInfoPlans}
             onMouseLeave={hideInfoPlans}>Planes
@@ -94,11 +94,12 @@ const Navbar = () => {
               </div>}</li>
         </ul>
       </div>
-      <div className="flex gap-2 space-x-4 append hover:bg-green-500 duration-300 hover:p-2 rounded-md hover:scale-125 text-gray-100 font-sans" onClick={toggleModalHandler} >
-        <button className="rounded-full font-semibold shadow-md transition duration-500 hover:scale-150">
+      <div className="flex gap-2 space-x-4 append hover:bg-green-500 duration-300 hover:p-2 rounded-md absolute right-10 text-gray-100 font-sans" onClick={toggleModalHandler} >
+        <button className="rounded-full font-semibold shadow-md transition duration-500">
           <img className="h-6" src="./img/whatsapp.png" alt="Contacto" />
         </button>
       </div>
+      <div className="w-[118px] bg-transparent h-1"></div> 
       {/* Modal */}
       {showModalContact && (
         <div className="fixed top-20 right-10 flex items-center justify-center z-100 bg-black bg-transparent">
