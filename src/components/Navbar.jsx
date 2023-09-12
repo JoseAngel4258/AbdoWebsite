@@ -65,33 +65,15 @@ const Navbar = () => {
         </span>
         <ul className="flex ">
           <li className="px-4 hover:text-black"
-            onMouseEnter={showInfoPlans}
-            onMouseLeave={hideInfoPlans}>Planes
+            >Planes
 
-            {
-              showPlans && (
-                <div className=""
-                >
-                  {/* Contenido personalizado que deseas mostrar */}
-                  <p>Plan 1</p>
-                  <p>Plan 2</p>
-                  <p>Plan 3</p>
-                </div>
-              )}
+           
 
           </li>
 
           <li className="px-4 hover:text-black"
-            onMouseEnter={showInfoService}
-            onMouseLeave={hideInfoService}>Service
-            {
-              showService && <div className=""
-              >
-                {/* Contenido personalizado que deseas mostrar */}
-                <p>Servicio 1</p>
-                <p>Servicio 2</p>
-                <p>Servicio 3</p>
-              </div>}</li>
+            >Service
+            </li>
         </ul>
       </div>
       <div className="flex gap-2 space-x-4 append hover:bg-green-500 duration-300 hover:p-2 rounded-md absolute right-10 text-gray-100 font-sans" onClick={toggleModalHandler} >
