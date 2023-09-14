@@ -211,18 +211,40 @@ html {
   display: flex;
   direction: row;
   justify-content: space-between;
-  padding: 24px;
+  align-items: center;
+  padding: 20px;
   position: fixed;
   width: 100%;
+  background-color: transparent; /* Inicialmente transparente */
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
   color: #fafafa;
+  transition: background-color 0.3s ease; /* Transición para el cambio de fondo */
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff; /* Color de fondo blanco */
+  opacity: 0; /* Inicialmente transparente */
+  z-index: -1; /* Detrás del contenido */
+  transition: opacity 0.365s ease-out; /* Transición para la opacidad */
 }
 
 .header:hover {
+  background-color: #ffffff; /* Fondo blanco al hacer hover */
+  color: black; /* Cambio de color de texto al hacer hover */
   text-shadow: none;
-  background-color: #fafafa;
-  color: black;
 }
+
+.header:hover::before {
+  opacity: 1; /* Mostrar el fondo blanco con animación al hacer hover */
+}
+
+
 
 .navigation ul {
   display: flex;
@@ -241,9 +263,11 @@ html {
   border-radius: 4px;
   box-shadow: 5px 5px #888888;
 }
+
 .navigation ul li:not(:hover) {
   transition: 0.3s ease;
 }
+
 .sub-menu {
   display: none;
   flex-direction: column;
@@ -286,3 +310,6 @@ html {
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 1); /* offsetX offsetY blurRadius color */
 }
 
+.text-no-shadow {
+  text-shadow: none;
+}

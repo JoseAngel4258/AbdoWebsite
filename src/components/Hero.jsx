@@ -83,7 +83,7 @@ function Hero() {
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
             className={`text-2xl cursor-pointer ${
-              slideIndex === currentIndex ? "text-red-600" : "text-gray-100"
+              slideIndex === currentIndex ? "text-blue-500" : "text-gray-100"
             }`}
           >
             <RxDotFilled size={30} />

@@ -12,7 +12,8 @@ import WhatWeSell from "./components/WhatWeSell";
 import WhoWeAre from "./components/WhoWeAre";
 import PlansCard from "./components/PlansCard";
 import Navbar from "./components/Navbar.jsx";
-import videoSource from "./assets/fondobg.mp4";
+import Video from "./components/Video";
+
 
 const products = [
   {
@@ -40,14 +41,8 @@ const App = () => {
     <div className="h-[100vh] font-satoshi md:snap-y md:snap-mandatory md:overflow-auto fondoBg scroll-smooth">
       <Navbar />
       <Hero />
-      <video
-        autoPlay
-        muted
-        loop
-        className="w-[100vw] h-screen object-fill snap-center"
-      >
-        <source src={videoSource} type="video/mp4" />
-      </video>
+      <Video />
+      <InstallationService />
 
       {/*<About />
       
@@ -56,7 +51,7 @@ const App = () => {
         <WhatWeDo />
         <WhoWeAre />
         <WhatWeSell />
-      <InstallationService />
+      
       <PlansCard />
       <FAQSection />
       <ParticlesBackground />*/}
