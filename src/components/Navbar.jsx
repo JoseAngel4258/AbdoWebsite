@@ -1,4 +1,5 @@
-import React, { useState, useEffect  } from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -6,28 +7,17 @@ const Navbar = () => {
   const toggleSubMenu = () => {
     setShowSubMenu(!showSubMenu);
   };
-  const [isInVideoSection, setIsInVideoSection] = useState(false);
+ 
+  const isInVideoSection = useSelector(
+    (state) => state.isInVideoSection
+  ); // Accede al estado desde Redux
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const videoSection = document.getElementById("video");
-      if (videoSection) {
-        const rect = videoSection.getBoundingClientRect();
-        setIsInVideoSection(rect.top <= 0 && rect.bottom >= 0);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  console.log(isInVideoSection)
 
   return (
     <div
       className={`header z-10 flex justify-center items-center h-[74px] font-inter ${
-        isInVideoSection ? "opacity-100" : ""
+        isInVideoSection ? "bg-slate-100" : "bg-black"
       }`}
     >
       <h1>ABDO77</h1>

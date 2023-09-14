@@ -1,5 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
+import { Provider } from "react-redux";
+import store from "./components/store";
 import About from "./components/About";
 import About2 from "./components/About2";
 import About3 from "./components/About3";
@@ -36,16 +38,17 @@ const App = () => {
 
 
   return (
-    <div className="h-[100vh] md:snap-y md:snap-mandatory md:overflow-auto fondoBg scroll-smooth font-inter">
-      <Navbar />
-      <Hero />
-      <div id="video">
-        <Video />
-      </div>
+    <Provider store={store}>
+      <div className="h-[100vh] md:snap-y md:snap-mandatory md:overflow-auto fondoBg scroll-smooth font-inter">
+        <Navbar />
+        <Hero />
 
-      <InstallationService />
-      <PlansCardHeizahn />
-      {/*<About />
+        <Video />
+
+
+        <InstallationService />
+        <PlansCardHeizahn />
+        {/*<About />
         <About2 />
         <About3 />
         <WhatWeDo />
@@ -54,7 +57,8 @@ const App = () => {
       
       <FAQSection />
       <ParticlesBackground />*/}
-    </div>
+      </div>
+    </Provider>
   );
 };
 
