@@ -7,7 +7,7 @@ const PlansCardHeizahn = () => {
         <div className="box one" dataText='plan1'></div>
         <div className="box two" dataText='plan2'></div>
         <div className="box three" dataText='plan3'></div>
-        <div className="box four" dataText='plan4'></div>
+        <div className="box four" dataText='plan4'>xdf</div>
       </div>
     </div>
   );
