@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
 
 function Hero() {
@@ -52,28 +55,38 @@ function Hero() {
 
   return (
     <div className=" h-[100vh] w-screen relative group snap-center">
+      
       <div
         id="inicio"
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full  bg-center bg-cover duration-500 shadow-lg"
       ></div>
       {/* Left Arrow */}
-      <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactLeft onClick={prevSlide} size={30} />
+      <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-10 rounded-full p-1 bg-black/40 text-2xl text-white cursor-pointer">
+        <MdOutlineKeyboardArrowLeft
+          className="hover:text-gray-300 transition-all"
+          onClick={prevSlide}
+          size={60}
+        />
       </div>
       {/* Right Arrow */}
-      <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactRight onClick={nextSlide} size={30} />
+      <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-10 rounded-full p-1 bg-black/40 text-2xl text-white cursor-pointer">
+        <MdOutlineKeyboardArrowRight
+          className="hover:text-gray-300 transition-all"
+          onClick={nextSlide}
+          size={60}
+        />
       </div>
-      <div className="fixed inset-x-0 bottom-5 flex justify-center">
+      <div className="relative inset-x-0 bottom-[40px] flex justify-center">
         {slides.map((_, slideIndex) => (
           <div
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
-            className={`text-2xl cursor-pointer ${slideIndex === currentIndex ? "text-black" : "text-gray-300"
-              }`}
+            className={`text-2xl cursor-pointer ${
+              slideIndex === currentIndex ? "text-red-600" : "text-gray-100"
+            }`}
           >
-            <RxDotFilled />
+            <RxDotFilled size={30} />
           </div>
         ))}
       </div>

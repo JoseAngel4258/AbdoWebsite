@@ -11,7 +11,7 @@ import WhatWeDo from "./components/WhatWeDo";
 import WhatWeSell from "./components/WhatWeSell";
 import WhoWeAre from "./components/WhoWeAre";
 import PlansCard from "./components/PlansCard";
-import Navbar from "./components/Navbar.jsx"
+import Navbar from "./components/Navbar.jsx";
 import videoSource from "./assets/fondobg.mp4";
 
 const products = [
@@ -37,14 +37,20 @@ const App = () => {
   };
 
   return (
-    <div className="h-[100vh] font-satoshi md:snap-y md:snap-mandatory md:overflow-auto fondoBg">
-
+    <div className="h-[100vh] font-satoshi md:snap-y md:snap-mandatory md:overflow-auto fondoBg scroll-smooth">
       <Navbar />
-      <video autoPlay muted loop className="w-[100vw] h-screen object-cover"><source src={videoSource} type="video/mp4" /></video>
-
+      <Hero />
+      <video
+        autoPlay
+        muted
+        loop
+        className="w-[100vw] h-screen object-fill snap-center"
+      >
+        <source src={videoSource} type="video/mp4" />
+      </video>
 
       {/*<About />
-      <Hero />
+      
         <About2 />
         <About3 />
         <WhatWeDo />
@@ -54,7 +60,6 @@ const App = () => {
       <PlansCard />
       <FAQSection />
       <ParticlesBackground />*/}
-
     </div>
   );
 };
