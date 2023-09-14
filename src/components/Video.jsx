@@ -9,7 +9,9 @@ const Video = () => {
           <source src={videoSource} type="video/mp4" />
 
         </video>
-        <h1 className="absolute z-10 text-9xl text-white top-10 left-0 right-0 ">HOLA MUNDO</h1>
+        <h3 className="absolute z-10 text-6xl text-zinc-200 top-1/3 left-32 font-mono">Internet <br /> Ultra <br /> Veloz</h3>
+        <h3 className="absolute z-10 text-6xl text-zinc-200 top-1/3 right-32 font-mono">Internet <br /> Ultra <br /> Estable</h3>
+
       </div>
     </>
   );

@@ -10,9 +10,9 @@ import ParticlesBackground from "./components/ParticlesBackground";
 import WhatWeDo from "./components/WhatWeDo";
 import WhatWeSell from "./components/WhatWeSell";
 import WhoWeAre from "./components/WhoWeAre";
-import PlansCard from "./components/PlansCard";
 import Navbar from "./components/Navbar.jsx";
 import Video from "./components/Video";
+import PlansCardHeizahn from "./components/PlansCardHeaizahn";
 
 
 const products = [
@@ -43,7 +43,7 @@ const App = () => {
       <Hero />
       <Video />
       <InstallationService />
-
+      <PlansCardHeizahn />
       {/*<About />
       
         <About2 />
@@ -52,7 +52,6 @@ const App = () => {
         <WhoWeAre />
         <WhatWeSell />
       
-      <PlansCard />
       <FAQSection />
       <ParticlesBackground />*/}
     </div>
