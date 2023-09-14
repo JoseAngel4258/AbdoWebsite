@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -6,15 +6,32 @@ const Navbar = () => {
   const toggleSubMenu = () => {
     setShowSubMenu(!showSubMenu);
   };
+  const [isInVideoSection, setIsInVideoSection] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const videoSection = document.getElementById("video");
+      if (videoSection) {
+        const rect = videoSection.getBoundingClientRect();
+        setIsInVideoSection(rect.top <= 0 && rect.bottom >= 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div
-      className='header z-10 flex justify-evenly items-center h-[74px] font-inter'
+      className={`header z-10 flex justify-center items-center h-[74px] font-inter ${
+        isInVideoSection ? "opacity-100" : ""
+      }`}
     >
       <h1>ABDO77</h1>
-      <nav
-        className='navigation'
-      >
+      <nav className="navigation">
         <div></div>
         <ul className="gap-4">
           <li className="shadow-text">Nosotros</li>

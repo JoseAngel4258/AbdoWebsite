@@ -12,7 +12,6 @@ import WhatWeSell from "./components/WhatWeSell";
 import WhoWeAre from "./components/WhoWeAre";
 import Navbar from "./components/Navbar.jsx";
 import Video from "./components/Video";
-import Section from "./components/Section";
 import PlansCardHeizahn from "./components/PlansCardHeaizahn";
 
 
@@ -40,7 +39,10 @@ const App = () => {
     <div className="h-[100vh] md:snap-y md:snap-mandatory md:overflow-auto fondoBg scroll-smooth font-inter">
       <Navbar />
       <Hero />
-      <Video />
+      <div id="video">
+        <Video />
+      </div>
+
       <InstallationService />
       <PlansCardHeizahn />
       {/*<About />
@@ -49,11 +51,7 @@ const App = () => {
         <WhatWeDo />
         <WhoWeAre />
         <WhatWeSell />
-<<<<<<< HEAD
-      <PlansCard />
-=======
       
->>>>>>> dc6a28af17bb3520e89fbf55d8330024b1fd629a
       <FAQSection />
       <ParticlesBackground />*/}
     </div>
