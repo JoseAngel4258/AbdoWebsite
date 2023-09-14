@@ -13,7 +13,7 @@ import WhoWeAre from "./components/WhoWeAre";
 import PlansCard from "./components/PlansCard";
 import Navbar from "./components/Navbar.jsx";
 import Video from "./components/Video";
-
+import Section from "./components/Section";
 
 const products = [
   {
@@ -31,27 +31,23 @@ const products = [
 ];
 
 const App = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
 
-  const handleCardHover = (index) => {
-    setActiveIndex(index);
-  };
+
+
 
   return (
-    <div className="h-[100vh] font-satoshi md:snap-y md:snap-mandatory md:overflow-auto fondoBg scroll-smooth">
+    <div className="h-[100vh] md:snap-y md:snap-mandatory md:overflow-auto fondoBg scroll-smooth font-inter">
       <Navbar />
       <Hero />
       <Video />
       <InstallationService />
 
       {/*<About />
-      
         <About2 />
         <About3 />
         <WhatWeDo />
         <WhoWeAre />
         <WhatWeSell />
-      
       <PlansCard />
       <FAQSection />
       <ParticlesBackground />*/}

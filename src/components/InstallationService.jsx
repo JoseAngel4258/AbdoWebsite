@@ -13,7 +13,8 @@ const InstallationService = () => {
   };
 
   return (
-    <section className="h-[100vh] flex justify-center items-center snap-center pt-8">
+    <section className="h-[100vh] flex justify-center items-center snap-center pt-8"
+    id="instalacion">
       <motion.div
         ref={ref}
         initial="hidden"

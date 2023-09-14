@@ -5,6 +5,7 @@ import {
 } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
 
+
 function Hero() {
   const slides = [
     {
