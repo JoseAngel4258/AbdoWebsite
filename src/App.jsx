@@ -12,12 +12,9 @@ import WhatWeSell from "./components/WhatWeSell";
 import WhoWeAre from "./components/WhoWeAre";
 import Navbar from "./components/Navbar.jsx";
 import Video from "./components/Video";
-<<<<<<< HEAD
 import Section from "./components/Section";
-=======
 import PlansCardHeizahn from "./components/PlansCardHeaizahn";
 
->>>>>>> dc6a28af17bb3520e89fbf55d8330024b1fd629a
 
 const products = [
   {
