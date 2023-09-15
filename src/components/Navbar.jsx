@@ -24,26 +24,31 @@ const Navbar = () => {
         <ul className="gap-4">
           <li className="shadow-text">Nosotros</li>
           <li>Servicios</li>
-          <li
-            onMouseEnter={toggleSubMenu}
-            onMouseLeave={toggleSubMenu}
-            className="relative z-10"
-          >
-            Planes
-            <AnimatePresence>
-              {showSubMenu && (
-                <motion.ul
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className="flex flex-col justify-center mt-[-2px] items-center absolute sub-menu top-full  bg-white shadow-md rounded-lg p-2 py-4 gap-y-[12px] h-32 z"
-                >
-                  <li>Planes Residencial</li>
-                  <li>Planes Dedicado</li>
-                </motion.ul>
-              )}
-            </AnimatePresence>
-          </li>
+          <div className="relative z-10 peer">
+            <li className="relative z-10 peer">Planes</li>
+
+            <div className="hidden peer-hover:flex hover:flex w-[200px] flex-col bg-white drop-shadow-lg absolute top-[54px]">
+              <a
+                className="px-5 py-3 hover:bg-gray-200 hover:text-black" // Aquí aplicamos las mismas clases de hover
+                href="#"
+              >
+                About Us
+              </a>
+              <a
+                className="px-5 py-3 hover:bg-gray-200" // Aquí se mantiene el estilo hover original
+                href="#"
+              >
+                Contact Us
+              </a>
+              <a
+                className="px-5 py-3 hover:bg-gray-200" // Aquí se mantiene el estilo hover original
+                href="#"
+              >
+                Privacy Policy
+              </a>
+            </div>
+          </div>
+
           <li>Tutoriales</li>
         </ul>
       </nav>
