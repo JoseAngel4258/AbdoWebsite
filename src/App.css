@@ -221,6 +221,12 @@ html {
   transition: background-color 0.3s ease; /* Transición para el cambio de fondo */
 }
 
+.header-in-video {
+  background-color: #ffffff; /* Fondo blanco al hacer hover */
+  color: black; /* Cambio de color de texto al hacer hover */
+  text-shadow: none;
+}
+
 .header::before {
   content: "";
   position: absolute;
@@ -243,9 +249,6 @@ html {
 .header:hover::before {
   opacity: 1; /* Mostrar el fondo blanco con animación al hacer hover */
 }
-
-
-
 
 .navigation ul {
   display: flex;

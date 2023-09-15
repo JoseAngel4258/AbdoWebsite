@@ -7,17 +7,15 @@ const Navbar = () => {
   const toggleSubMenu = () => {
     setShowSubMenu(!showSubMenu);
   };
- 
-  const isInVideoSection = useSelector(
-    (state) => state.isInVideoSection
-  ); // Accede al estado desde Redux
 
-  console.log(isInVideoSection)
+  const isInVideoSection = useSelector((state) => state.isInVideoSection); // Accede al estado desde Redux
+
+  console.log(isInVideoSection);
 
   return (
     <div
       className={`header z-10 flex justify-center items-center h-[74px] font-inter ${
-        isInVideoSection ? "bg-slate-100" : "bg-black"
+        isInVideoSection ? "header-in-video" : ""
       }`}
     >
       <h1>ABDO77</h1>
