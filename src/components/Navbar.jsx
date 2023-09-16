@@ -27,21 +27,21 @@ const Navbar = () => {
           <div className="relative z-10 peer">
             <li className="relative z-10 peer">Planes</li>
 
-            <div className="hidden peer-hover:flex hover:flex w-[200px] flex-col bg-white drop-shadow-lg absolute top-[54px]">
+            <div className="hidden peer-hover:flex hover:flex w-[200px] flex-col bg-white drop-shadow-lg absolute top-[30px] rounded-xl">
               <a
-                className="px-5 py-3 hover:bg-gray-200 hover:text-black" // Aquí aplicamos las mismas clases de hover
+                className="px-5 py-3 hover:bg-gray-200 hover:rounded-xl" // Aquí aplicamos las mismas clases de hover
                 href="#"
               >
                 About Us
               </a>
               <a
-                className="px-5 py-3 hover:bg-gray-200" // Aquí se mantiene el estilo hover original
+                className="px-5 py-3 hover:bg-gray-200 hover:rounded-xl" // Aquí se mantiene el estilo hover original
                 href="#"
               >
                 Contact Us
               </a>
               <a
-                className="px-5 py-3 hover:bg-gray-200" // Aquí se mantiene el estilo hover original
+                className="px-5 py-3 hover:bg-gray-200 hover:rounded-xl" // Aquí se mantiene el estilo hover original
                 href="#"
               >
                 Privacy Policy
