@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <div
       className={`header z-10 flex justify-center items-center h-[74px] font-inter ${
-        isInVideoSection ? "header-in-video" : ""
+        isInVideoSection ? "" : ""
       }`}
     >
       <h1>ABDO77</h1>

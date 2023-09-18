@@ -1,8 +1,7 @@
-import React, { useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { setVideoSectionState } from "./actions";
-import videoSource from "../assets/fondobg.mp4";
-
+import videoSource from "/vids/fondobg.mp4";
 
 const Video = () => {
   const dispatch = useDispatch();
@@ -35,22 +34,25 @@ const Video = () => {
         observer.unobserve(videoRef.current);
       }
     };
-  }, [dispatch]); 
+  }, [dispatch]);
 
   return (
     <>
-      <section className="w-[100vw] h-[100vh] relative">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          className="h-full w-full object-cover snap-center brightness-50"
-        >
-          <source src={videoSource} type="video/mp4" />
-        </video>
+      <section className="w-[100vw] h-[100vh] relative flex items-center justify-center snap-center">
+        <div className="w-full h-full flex items-center justify-center bg-gray-950">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            className="h-[88vh] w-[80%] object-cover brightness-50 rounded-2xl mt-[58px]"
+          >
+            <source src={videoSource} type="video/mp4" />
+          </video>
+        </div>
+
         <h3 className="absolute z-10 text-7xl text-zinc-200 top-1/3 left-32 font-mono text-center text-with-shadow">
-        Hola
+          Hola
         </h3>
         <h3 className="absolute z-10 text-7xl text-zinc-200 top-1/3 right-32 font-mono text-center text-with-shadow">
           Servicio <br /> Ultra <br /> Estable

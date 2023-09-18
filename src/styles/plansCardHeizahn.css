@@ -7,6 +7,7 @@
   height: 500px;
   background-color: black;
   transition: 0.25s;
+  margin-top: 100px;
 }
 
 .contenedor .box {

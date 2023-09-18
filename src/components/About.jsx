@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <section
-      className="h-[100vh] flex justify-center items-center snap-center pt-16"
+      className="h-[100vh] flex justify-center items-center snap-center pt-16 text-black"
     >
       <div className="h-[80vh] bg-white shadow-lg rounded-xl  max-w-7xl mx-auto px-14 py-10">
         <motion.div
