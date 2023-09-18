@@ -41,7 +41,7 @@ const InstallationService = () => {
 
   return (
     <section
-      className="h-[100vh] flex flex-col justify-center items-center snap-center pt-8 bg-slate-900"
+      className="h-[100vh] flex flex-col justify-center items-center snap-center pt-8 bg-slate-950"
       id="instalacion"
     >
       <motion.div

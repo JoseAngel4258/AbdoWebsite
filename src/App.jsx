@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { Provider } from "react-redux";
 import store from "./components/store";
 import About from "./components/About";
-import About2 from "./components/About2";
-import About3 from "./components/About3";
+
 import FAQSection from "./components/FAQSection";
 import Hero from "./components/Hero";
 import InstallationService from "./components/InstallationService";
@@ -42,18 +41,30 @@ const App = () => {
       <div className="h-[100vh] md:snap-y md:snap-mandatory md:overflow-auto fondoBg scroll-smooth font-inter">
         <Navbar />
         <Hero />
-        <About />
+        <About
+          imageSrc="ruta-de-la-imagen-1.jpg"
+          title="Nuestros Inicios"
+          description="En nuestros inicios, comenzamos como una pequeña empresa local que se dedicaba a proporcionar servicios de Internet de alta velocidad a comunidades locales. Nuestra misión siempre ha sido ofrecer conexiones de fibra óptica confiables y rápidas."
+        />
+
+        {/* Sección 2: Quiénes Somos */}
+        <About
+          imageSrc="ruta-de-la-imagen-2.jpg"
+          title="Quiénes Somos"
+          description="Somos un equipo apasionado de expertos en fibra óptica que se esfuerza por brindar a nuestros clientes las mejores soluciones de conectividad. Con años de experiencia en la industria, estamos comprometidos en proporcionar un servicio de alta calidad y atención personalizada."
+        />
+
+        {/* Sección 3: A Dónde Vamos */}
+        <About
+          imageSrc="ruta-de-la-imagen-3.jpg"
+          title="A Dónde Vamos"
+          description="Nuestro objetivo es expandir nuestra red de fibra óptica y llegar a más comunidades para proporcionar acceso a Internet de alta velocidad a todos. Estamos comprometidos en seguir innovando y mejorando nuestros servicios para satisfacer las necesidades de nuestros clientes en constante evolución."
+        />
         <Video />
         <InstallationService />
         <PlansCardHeizahn />
 
         {/*
-        <About2 />
-        <About3 />
-        <WhatWeDo />
-        <WhoWeAre />
-        <WhatWeSell />
-      
       <FAQSection />
       <ParticlesBackground />*/}
       </div>
