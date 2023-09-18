@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Footer from "./Footer";
 
 const FAQSection = () => {
 	const [ref, inView] = useInView({
@@ -13,7 +14,7 @@ const FAQSection = () => {
 	};
 
 	return (
-		<section id="question" className="relative h-[100vh] flex justify-center items-center snap-center pt-16">
+		<section id="question" className="relative h-[100vh] flex flex-col justify-center items-center snap-center pt-16">
 			<div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
 				<p className="p-2 text-sm font-medium tracki text-center uppercase">How it works</p>
 				<h2 className="mb-12 text-4xl font-bold leadi text-center sm:text-5xl">Frequently Asked Questions</h2>
@@ -39,7 +40,7 @@ const FAQSection = () => {
 					</details>
 				</div>
 			</div>
-			<div id="about" className="absolute bottom-10">nosotros</div>
+			<Footer/>
 		</section>
 	);
 };

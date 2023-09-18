@@ -15,12 +15,11 @@ const Navbar = () => {
   return (
     <div
       className={`header z-10 flex justify-center items-center h-[74px] font-inter ${
-        isInVideoSection ? "" : ""
+        isInVideoSection ? "header-in-video opacity-0 hover:opacity-100 transition-all duration-100" : ""
       }`}
     >
       <h1>ABDO77</h1>
       <nav className="navigation">
-        <div></div>
         <ul className="gap-4">
           <li className="shadow-text">Nosotros</li>
           <li>Servicios</li>
