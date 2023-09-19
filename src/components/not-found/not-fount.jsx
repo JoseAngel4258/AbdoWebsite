@@ -1,13 +1,11 @@
 import React from 'react'
 import {Link as RouteLink} from 'react-router-dom'
 
-const Tutorials = () => {
+export default function NotFound() {
   return (
     <>
     <nav><h1><RouteLink to='/'>ABDO 77</RouteLink></h1></nav>
-    <div>Tutorials</div>
+      <h1>404 Sorry</h1>
     </>
   )
 }
-
-export default Tutorials
