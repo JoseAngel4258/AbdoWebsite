@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import ParticlesBackground from "./ParticlesBackground";
 
 const About = ({ imageSrc, title, description }) => {
   const [ref, inView] = useInView({
@@ -88,7 +87,7 @@ const About = ({ imageSrc, title, description }) => {
           </motion.div>
         </div>
       </motion.div>
-      <ParticlesBackground/>
+  
     </section>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 const Navbar = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const toggleSubMenu = () => {
@@ -10,17 +11,20 @@ const Navbar = () => {
 
   const isInVideoSection = useSelector((state) => state.isInVideoSection); // Accede al estado desde Redux
 
-  console.log(isInVideoSection);
-
   return (
     <div
       className={`header z-10 flex justify-center items-center h-[74px] font-inter ${
-        isInVideoSection ? "header-in-video opacity-0 hover:opacity-100 transition-all duration-100" : ""
+        isInVideoSection
+          ? "header-in-video opacity-0 hover:opacity-100 transition-all duration-100"
+          : ""
       }`}
     >
       <h1>ABDO77</h1>
       <nav className="navigation">
         <ul className="gap-4">
+          <li className="shadow-text">
+           Inicio
+          </li>
           <li className="shadow-text">Nosotros</li>
           <li>Servicios</li>
           <div className="relative z-10 peer">
@@ -48,7 +52,9 @@ const Navbar = () => {
             </div>
           </div>
 
-          <li>Tutoriales</li>
+          <li>
+          Tutoriales
+          </li>
         </ul>
       </nav>
       <nav className="navigation">

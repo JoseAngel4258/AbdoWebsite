@@ -12,7 +12,7 @@ const ParticlesBackground = () => {
   const particlesLoaded = useCallback(async () => { }, []);
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-gray-400 to-gray-200 -z-20">
+    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-gray-400 to-gray-200 -z-10">
       <Particles
         id="tsparticles"
         init={particlesInit}
