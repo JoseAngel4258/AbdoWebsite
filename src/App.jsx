@@ -15,7 +15,6 @@ import Navbar from "./components/Navbar.jsx";
 import Video from "./components/Video";
 import PlansCardHeizahn from "./components/PlansCardHeaizahn";
 
-
 const products = [
   {
     title: "Producto 1",
@@ -32,10 +31,6 @@ const products = [
 ];
 
 const App = () => {
-
-
-
-
   return (
     <Provider store={store}>
       <div className="h-[100vh] md:snap-y md:snap-mandatory md:overflow-auto fondoBg scroll-smooth font-inter">
