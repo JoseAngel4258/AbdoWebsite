@@ -45,11 +45,9 @@
   z-index: 3;
   width: 100%;
   max-width: 640px;
-  background-image: radial-gradient(
-      at 27% 37%,
+  background-image: radial-gradient(at 27% 37%,
       hsla(215, 98%, 61%, 1) 0px,
-      transparent 0%
-    ),
+      transparent 0%),
     radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
     radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
     radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
@@ -71,52 +69,6 @@
   }
 }
 
-/* Tailwind Styles */
-
-.app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
-}
-
-.black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
-}
-
-.head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-center;
-}
-
-.orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
-}
-
-.desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl text-center max-w-2xl;
-}
-
-.url_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-10 pr-12 text-sm shadow-lg font-satoshi font-medium focus:border-black focus:outline-none focus:ring-0;
-}
-
-.submit_btn {
-  @apply hover:border-gray-700 hover:text-gray-700 absolute inset-y-0 right-0 my-1.5 mr-1.5 flex w-10 items-center justify-center rounded border border-gray-200 font-sans text-sm font-medium text-gray-400;
-}
-
-.link_card {
-  @apply p-3 flex justify-start items-center flex-row bg-white border border-gray-200 gap-3 rounded-lg cursor-pointer;
-}
-
-.copy_btn {
-  @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
-}
-
-.blue_gradient {
-  @apply font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
-}
-
-.summary_box {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-4;
-}
-
 .slider {
   width: 1300px;
   max-width: 100vw;
@@ -125,6 +77,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .slider .list {
   position: absolute;
   width: max-content;
@@ -134,12 +87,14 @@
   display: flex;
   transition: 1s;
 }
+
 .slider .list img {
   width: 1300px;
   max-width: 100vw;
   height: 100%;
   object-fit: cover;
 }
+
 .slider .buttons {
   position: absolute;
   top: 45%;
@@ -148,6 +103,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .slider .buttons button {
   width: 50px;
   height: 50px;
@@ -158,6 +114,7 @@
   font-family: monospace;
   font-weight: bold;
 }
+
 .slider .dots {
   position: absolute;
   bottom: 10px;
@@ -169,6 +126,7 @@
   display: flex;
   justify-content: center;
 }
+
 .slider .dots li {
   list-style: none;
   width: 10px;
@@ -178,9 +136,11 @@
   border-radius: 20px;
   transition: 0.5s;
 }
+
 .slider .dots li.active {
   width: 30px;
 }
+
 @media screen and (max-width: 768px) {
   .slider {
     height: 400px;
@@ -215,17 +175,19 @@ html {
   padding: 20px;
   position: fixed;
   width: 100%;
-  background-color: transparent; /* Inicialmente transparente */
+  background-color: transparent;
+  /* Inicialmente transparente */
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
   color: #fafafa;
-  transition: background-color 0.3s ease; /* Transición para el cambio de fondo */
+  transition: background-color 0.3s ease;
+  transition: opacity 0.365s ease-out;
+  /* Transición para el cambio de fondo */
 }
 
 .header-in-video {
-  background-color: #ffffff; /* Fondo blanco al hacer hover */
-  color: black; /* Cambio de color de texto al hacer hover */
   text-shadow: none;
 }
+
 
 .header::before {
   content: "";
@@ -234,20 +196,27 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ffffff; /* Color de fondo blanco */
-  opacity: 0; /* Inicialmente transparente */
-  z-index: -1; /* Detrás del contenido */
-  transition: opacity 0.365s ease-out; /* Transición para la opacidad */
+  background-color: #ffffff;
+  /* Color de fondo blanco */
+  opacity: 0;
+  /* Inicialmente transparente */
+  z-index: -1;
+  /* Detrás del contenido */
+  transition: opacity 0.365s ease-out;
+  /* Transición para la opacidad */
 }
 
 .header:hover {
-  background-color: #ffffff; /* Fondo blanco al hacer hover */
-  color: black; /* Cambio de color de texto al hacer hover */
+  background-color: #ffffff;
+  /* Fondo blanco al hacer hover */
+  color: black;
+  /* Cambio de color de texto al hacer hover */
   text-shadow: none;
 }
 
 .header:hover::before {
-  opacity: 1; /* Mostrar el fondo blanco con animación al hacer hover */
+  opacity: 1;
+  /* Mostrar el fondo blanco con animación al hacer hover */
 }
 
 .navigation ul {
@@ -276,18 +245,25 @@ html {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: calc(100% + 4px); /* Coloca el submenú debajo del elemento padre */
-  background-color: #fff; /* Fondo blanco para el submenú */
+  top: calc(100% + 4px);
+  /* Coloca el submenú debajo del elemento padre */
+  background-color: #fff;
+  /* Fondo blanco para el submenú */
   padding: 12px 16px;
-  box-shadow: 4px 6px rgba(0, 0, 0, 0.1); /* Sombra del submenú */
-  transition: opacity 0.5s ease-in-out; /* Agregar transición suave a la opacidad */
-  opacity: 0; /* Inicialmente, el submenú está oculto */
+  box-shadow: 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra del submenú */
+  transition: opacity 0.5s ease-in-out;
+  /* Agregar transición suave a la opacidad */
+  opacity: 0;
+  /* Inicialmente, el submenú está oculto */
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   width: max-content;
 }
+
 .navigation ul li:hover .sub-menu {
-  display: flex; /* Muestra el submenú cuando se hace hover en el elemento padre */
+  display: flex;
+  /* Muestra el submenú cuando se hace hover en el elemento padre */
   flex-direction: column;
   opacity: 1;
 }
@@ -311,7 +287,8 @@ html {
 }
 
 .text-with-shadow {
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 1); /* offsetX offsetY blurRadius color */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+  /* offsetX offsetY blurRadius color */
 }
 
 .text-no-shadow {

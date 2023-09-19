@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setVideoSectionState } from "./actions";
-import videoSource from "/vids/fondobg.mp4";
+import videoSource from "../assets/fondobg.mp4";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Video = () => {
   const dispatch = useDispatch();
   const videoRef = useRef(null);
+  const videoSectionState = useSelector((state) => state.videoSectionState);
+
   useEffect(() => {
     const options = {
       root: null,
@@ -38,25 +42,45 @@ const Video = () => {
 
   return (
     <>
-      <section className="w-[100vw] h-[100vh] relative flex items-center justify-center snap-center">
+      <section
+        className="w-[100vw] h-[100vh] relative flex items-center justify-center snap-center"
+      >
         <div className="w-full h-full flex items-center justify-center bg-gray-950">
           <video
             ref={videoRef}
             autoPlay
             muted
             loop
-            className="h-[88vh] w-[80%] object-cover brightness-50 rounded-2xl mt-[58px]"
+            className="h-[100%] w-full object-cover snap-center brightness-75"
           >
             <source src={videoSource} type="video/mp4" />
           </video>
         </div>
 
-        <h3 className="absolute z-10 text-7xl text-zinc-200 top-1/3 left-32 font-mono text-center text-with-shadow">
-          Hola
-        </h3>
-        <h3 className="absolute z-10 text-7xl text-zinc-200 top-1/3 right-32 font-mono text-center text-with-shadow">
-          Servicio <br /> Ultra <br /> Estable
-        </h3>
+        <motion.h3
+          className="absolute z-10 text-7xl text-zinc-200 top-1/3 left-32 font-mono text-center text-with-shadow"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: { duration: 0.6 },
+          }}
+          exit={{ opacity: 0, x: 50 }}
+        >
+          Internet <br /> Ultra <br /> Veloz
+        </motion.h3>
+        <motion.h3
+          className="absolute z-10 text-7xl text-zinc-200 top-1/3 right-32 font-mono text-center text-with-shadow"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: { duration: 0.6 },
+          }}
+          exit={{ opacity: 0, x: -50 }}
+        >
+          Servicio <br /> Súper <br /> Estable
+        </motion.h3>
       </section>
     </>
   );

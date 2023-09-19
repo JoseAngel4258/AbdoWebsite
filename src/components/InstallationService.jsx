@@ -50,17 +50,16 @@ const InstallationService = () => {
         animate={inView ? "visible" : "hidden"}
         exit="hidden"
         variants={animationVariants}
-        className="max-w-[77rem] h-[59vh] p-8 bg-slate-50 shadow-xl rounded-xl grid grid-cols-1 md:grid-cols-2 gap-8"
+        className="max-w-[77rem] h-[59vh] p-8 bg-slate-100 shadow-xl rounded-xl grid grid-cols-1 md:grid-cols-2 gap-8"
       >
         <AnimatePresence mode="wait">
           <div
             key={selectedPlan}
-            className="flex flex-col justify-center text-lg"
+            className="flex flex-col justify-center text-lg ml-8"
           >
             <motion.h2
-              className={`text-3xl font-semibold mb-6 ${
-                selectedPlan === "fiber" ? "text-red-500" : "text-blue-500"
-              }`} // Cambia el color del título
+              className={`text-3xl font-semibold mb-6 ${selectedPlan === "fiber" ? "text-red-500" : "text-blue-500"
+                }`} // Cambia el color del título
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -141,9 +140,8 @@ const InstallationService = () => {
               )}
             </ul>
             <motion.p
-              className={`text-4xl font-semibold mt-6 ${
-                selectedPlan === "fiber" ? "text-red-500" : "text-blue-500"
-              }`} // Cambia el color del precio
+              className={`text-4xl font-semibold mt-6 ${selectedPlan === "fiber" ? "text-red-500" : "text-blue-500"
+                }`} // Cambia el color del precio
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -165,11 +163,10 @@ const InstallationService = () => {
       </motion.div>
       <div className="flex justify-center mt-8 gap-4">
         <motion.button
-          className={` ${
-            selectedPlan === "fiber"
+          className={` ${selectedPlan === "fiber"
               ? "bg-red-500 text-white" // Cambia el color del botón a rojo
               : "bg-white text-black"
-          } px-4 py-2 rounded-lg`}
+            } px-4 py-2 rounded-lg`}
           onClick={() => handlePlanChange("fiber")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
@@ -177,11 +174,10 @@ const InstallationService = () => {
           Plan de Fibra
         </motion.button>
         <motion.button
-          className={`${
-            selectedPlan === "antena"
+          className={`${selectedPlan === "antena"
               ? "bg-blue-500 text-white"
               : "bg-white text-black"
-          } px-4 py-2 rounded-lg`}
+            } px-4 py-2 rounded-lg`}
           onClick={() => handlePlanChange("antena")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
