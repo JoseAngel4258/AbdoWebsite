@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { up, right } from "../assets/motion";
 import Footer from "./Footer";
 
 const FAQSection = () => {
@@ -20,67 +21,86 @@ const FAQSection = () => {
         "¿Qué planes tienen para el área residencial y el área corporativa?",
       answer: "Planes desde 30Mbps hasta 100Mbps.",
     },
+    {
+      question: "¿Se cae la conexión si llueve?",
+      answer:
+        "No, el servicio de fibra óptica no se ve afectado por las condiciones climatológicas.",
+    },
   ];
 
+  const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
+    threshold: 0.15,
   });
 
-  const [openIndexes, setOpenIndexes] = useState([]);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const handleToggle = (index) => {
-    if (openIndexes.includes(index)) {
-      setOpenIndexes(openIndexes.filter((i) => i !== index));
+    if (openIndex === index) {
+      setOpenIndex(null);
     } else {
-      setOpenIndexes([...openIndexes, index]);
+      setOpenIndex(index);
     }
   };
 
-  const animationVariants = {
-    visible: { opacity: 1, height: "auto" },
-    hidden: { opacity: 0, height: 0 },
-  };
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
 
   return (
     <section
       id="question"
-      className="relative h-screen flex flex-col justify-center items-center snap-center pt-16 text-black"
+      className="relative h-screen flex flex-col justify-center items-center snap-center pt-16 text-black "
     >
-      <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
-        <p className="text-sm font-medium text-center uppercase">
-          How it works
-        </p>
-        <h2 className="mb-12 text-4xl font-bold text-center sm:text-5xl">
-          Frequently Asked Questions
-        </h2>
-        <div className="flex flex-col sm:px-8 lg:px-12 xl:px-32">
-          {data.map((item, index) => (
-            <div key={index}>
-              <motion.summary
-                className={`py-2 outline-none cursor-pointer focus:text-gray-200 ${
-                  openIndexes.includes(index) ? "open" : ""
-                }`}
-                onClick={() => handleToggle(index)}
-                variants={animationVariants}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                ref={ref}
-              >
-                {item.question}
-              </motion.summary>
+      <div className="container flex flex-col justify-center p-4 mx-auto md:p-8 gap-y-4">
+        <div className="-mt-10">
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={up}
+          >
+            <p className="text-sm font-semibold text-center uppercase mb-2">
+              Respondemos a tus
+            </p>
+            <h2 className="mb-12 text-4xl font-bold text-center sm:text-5xl">
+              Preguntas frecuentes
+            </h2>
+          </motion.div>
+
+          <div className="flex flex-col sm:px-8 lg:px-12 xl:px-32 text-lg select-none">
+            {data.map((item, index) => (
               <motion.div
-                variants={animationVariants}
+                key={index}
+                className="faq-item"
                 initial="hidden"
-                animate={openIndexes.includes(index) ? "visible" : "hidden"}
-                exit="hidden"
-                className={`px-4 pb-4 overflow-hidden ${
-                  openIndexes.includes(index) ? "block" : "hidden"
-                }`}
+                animate={controls}
+                variants={right}
+                transition={{  duration: 1.5 }} // Agrega un retraso entre las animaciones
               >
-                <p>{item.answer}</p>
+                <motion.summary
+                  className={`py-2 outline-none cursor-pointer focus:text-gray-200 ${
+                    openIndex === index ? "open" : ""
+                  }`}
+                  onClick={() => handleToggle(index)}
+                >
+                  {item.question}
+                </motion.summary>
+                <motion.div
+                  className={`px-4 pb-4 overflow-hidden ${
+                    openIndex === index ? "block" : "hidden"
+                  }`}
+                >
+                  <p>{item.answer}</p>
+                </motion.div>
               </motion.div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
       <Footer />

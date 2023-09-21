@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { up, left, right } from "../assets/motion";
 
 const InstallationService = () => {
   const [ref, inView] = useInView({
@@ -58,12 +59,10 @@ const InstallationService = () => {
     selectedPlan === "fiber"
       ? "Nuestro servicio de instalación profesional incluye:"
       : "Nuestro servicio de instalación de antenas incluye:";
-  const priceText =
-    selectedPlan === "fiber" ? "¡Por tan solo $110!" : "¡Por tan solo $200!";
 
   return (
     <section
-      className="h-screen flex flex-col items-center snap-center"
+      className="h-screen flex flex-col items-center snap-center text-lg"
       id="instalacion"
     >
       <motion.div
@@ -91,10 +90,10 @@ const InstallationService = () => {
           <AnimatePresence mode="wait">
             <div
               key={selectedPlan}
-              className="flex flex-col justify-center text-lg ml-8"
+              className="flex flex-col justify-center  text-lg ml-8"
             >
               <motion.h2
-                className={`text-3xl font-semibold mb-6 ${
+                className={`text-4xl text-center font-semibold mb-6 ${
                   selectedPlan === "fiber" ? "text-red-500" : "text-blue-500"
                 }`} // Cambia el color del título
                 initial="hidden"
@@ -105,7 +104,7 @@ const InstallationService = () => {
                 {title}
               </motion.h2>
               <motion.p
-                className="text-gray-700 mb-4 text-base" // Tamaño y color del texto
+                className="text-gray-700 mb-4 text-lg px-8" // Tamaño y color del texto
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -113,7 +112,7 @@ const InstallationService = () => {
               >
                 {serviceText}
               </motion.p>
-              <ul className="list-disc list-inside text-base">
+              <ul className="list-disc list-inside text-xl">
                 {selectedPlan === "fiber" ? (
                   <>
                     <motion.li
@@ -187,22 +186,11 @@ const InstallationService = () => {
                   </>
                 )}
               </ul>
-              <motion.p
-                className={`text-4xl font-semibold mt-6 ${
-                  selectedPlan === "fiber" ? "text-red-500" : "text-blue-500"
-                }`} // Cambia el color del precio
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={animationVariants}
-              >
-                {priceText}
-              </motion.p>
             </div>
           </AnimatePresence>
         </div>
       </motion.div>
-      <motion.div className="flex justify-center items-center gap-4 -mt-6">
+      <motion.div className="flex justify-center items-center gap-4 -mt-6 text-lg">
         <motion.button
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -210,8 +198,8 @@ const InstallationService = () => {
           className={` ${
             selectedPlan === "fiber"
               ? "bg-red-500 text-white" // Cambia el color del botón a rojo
-              : "bg-slate-700 text-white"
-          } px-4 py-2 rounded-2xl h-12 w-44`}
+              : "bg-white text-black border-box"
+          } px-4 py-2 rounded-2xl w-[170px] font-semibold`}
           onClick={() => handlePlanChange("fiber")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
@@ -225,8 +213,8 @@ const InstallationService = () => {
           className={`${
             selectedPlan === "antena"
               ? "bg-blue-500 text-white"
-              : "bg-slate-700 text-white"
-          } px-4 py-2 rounded-2xl h-12 w-44`}
+              : "bg-white text-black border-box"
+          } px-4 py-2 rounded-2xl w-[170px] font-semibold`}
           onClick={() => handlePlanChange("antena")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
