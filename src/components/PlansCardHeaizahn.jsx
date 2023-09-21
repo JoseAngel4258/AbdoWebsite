@@ -28,23 +28,23 @@ const PlansCardHeizahn = () => {
     },
   };
 
-    const left = {
-      hidden: { opacity: 0, x: 25 },
-      visible: {
-        opacity: 1,
-        x: 0,
-        transition: { type: "spring", stiffness: 120, damping: 14 },
-      },
-    };
+  const left = {
+    hidden: { opacity: 0, x: 25 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 120, damping: 14 },
+    },
+  };
 
-    const right = {
-      hidden: { opacity: 0, x: -25 },
-      visible: {
-        opacity: 1,
-        x: 0,
-        transition: { type: "spring", stiffness: 120, damping: 14 },
-      },
-    };
+  const right = {
+    hidden: { opacity: 0, x: -25 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 120, damping: 14 },
+    },
+  };
 
   React.useEffect(() => {
     if (inView) {
@@ -57,7 +57,7 @@ const PlansCardHeizahn = () => {
   return (
     <section
       id="service"
-      className="h-[100vh] w-screen md:snap-center flex justify-center items-center bg-gray-800"
+      className="h-[100vh] w-screen md:snap-center flex justify-center items-center"
       ref={ref}
     >
       <div className="flex flex-col items-center justify-center">
@@ -90,8 +90,8 @@ const PlansCardHeizahn = () => {
             className={` ${
               selectedOption === "fibra"
                 ? "bg-slate-700 text-white"
-                : "bg-white text-black font-semibold"
-            } px-4 py-2 rounded-lg`}
+                : "bg-white text-black  border-box"
+            } px-4 py-2 rounded-2xl font-semibold`}
             onClick={() => handleOptionChange("fibra")}
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.97 }}
@@ -105,8 +105,8 @@ const PlansCardHeizahn = () => {
             className={` ${
               selectedOption === "antena"
                 ? "bg-slate-700 text-white "
-                : "bg-white text-black"
-            } px-4 py-2 rounded-lg font-semibold`}
+                : "bg-white text-black border-box"
+            } px-4 py-2 rounded-2xl font-semibold`}
             onClick={() => handleOptionChange("antena")}
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.97 }}

@@ -2,7 +2,7 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const About = ({ imageSrc, title, description }) => {
+const Product = ({ imageSrc, title, description }) => {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -43,8 +43,17 @@ const About = ({ imageSrc, title, description }) => {
 
   return (
     <section className="h-screen snap-center flex">
+      <div className="w-1/2">
+        <img
+          src="/img/1.jpg"
+          alt="Imagen de la empresa"
+          className="w-full h-full object-cover"
+        />
+      </div>
       <div className="w-1/2 flex flex-col justify-center items-center px-20">
-        <h2 className="text-4xl font-bold mb-4">¿Quiénes Somos?</h2>
+        <h2 className="text-4xl font-bold mb-4">
+          Internet de fibra óptica y conexión inalámbrica sin límites
+        </h2>
         <p className="text-lg mt-4 text-justify">
           En nuestra empresa, nos destacamos por ofrecer calidad e innovación en
           nuestros productos y servicios. Con más de 15 años de experiencia,
@@ -57,16 +66,8 @@ const About = ({ imageSrc, title, description }) => {
           de alta calidad.
         </p>
       </div>
-
-      <div className="w-1/2">
-        <img
-          src="/img/3.jpg"
-          alt="Imagen de la empresa"
-          className="w-full h-full object-cover"
-        />
-      </div>
     </section>
   );
 };
 
-export default About;
+export default Product;

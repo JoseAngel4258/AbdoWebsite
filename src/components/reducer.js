@@ -1,7 +1,7 @@
 // reducers.js
-
 const initialState = {
   isInVideoSection: false,
+  isInHeroSection: false, // Agrega el estado para la sección "Hero"
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -10,6 +10,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         isInVideoSection: action.payload,
+      };
+    case "SET_HERO_SECTION_STATE":
+      return {
+        ...state,
+        isInHeroSection: action.payload, // Actualiza el estado de la sección "Hero"
       };
     default:
       return state;

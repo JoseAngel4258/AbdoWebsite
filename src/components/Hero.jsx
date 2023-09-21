@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
-
+import { setHeroSectionState } from "./actions";
 
 function Hero() {
   const slides = [
@@ -54,10 +55,44 @@ function Hero() {
     };
   }, [currentIndex]);
 
+  const dispatch = useDispatch();
+  const heroRef = useRef(null);
+  const heroSectionState = useSelector((state) => state.heroSectionState); // Obtén el estado de la sección Hero desde Redux
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          dispatch(setHeroSectionState(true)); // Dispara la acción para actualizar el estado cuando la sección Hero está en pantalla
+        } else {
+          dispatch(setHeroSectionState(false)); // Dispara la acción para actualizar el estado cuando la sección Hero no está en pantalla
+        }
+      });
+    }, options);
+
+    // Comienza a observar el elemento de Hero cuando se monta el componente.
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    // Detén la observación cuando el componente se desmonta.
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, [dispatch]);
+
   return (
     <div className=" h-[100vh] w-screen relative group snap-center">
-      
       <div
+        ref={heroRef}
         id="inicio"
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full  bg-center bg-cover duration-500 shadow-lg"
