@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { up, right } from "../assets/motion";
-import Footer from "./Footer";
+import { up, down, right } from "../assets/motion";
 
 const FAQSection = () => {
   const data = [
@@ -80,8 +79,8 @@ const FAQSection = () => {
                 className="faq-item"
                 initial="hidden"
                 animate={controls}
-                variants={right}
-                transition={{  duration: 1.5 }} // Agrega un retraso entre las animaciones
+                variants={down}
+                transition={{ duration: 1.5 }} // Agrega un retraso entre las animaciones
               >
                 <motion.summary
                   className={`py-2 outline-none cursor-pointer focus:text-gray-200 ${
@@ -103,7 +102,25 @@ const FAQSection = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <motion.foot
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        exit="hidden"
+        variants={down}
+        className="flex items-center absolute bottom-0"
+      >
+        <ul className="flex flex-row gap-4 mb-7">
+          <li>
+            <a href="">Abdo77 © 2023</a>
+          </li>
+          <li>
+            <a href="">Privacidad y legal</a>
+          </li>
+          <li>
+            <a href="">Contacto </a>
+          </li>
+        </ul>
+      </motion.foot>
     </section>
   );
 };

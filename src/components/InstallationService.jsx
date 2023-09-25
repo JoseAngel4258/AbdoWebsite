@@ -12,39 +12,22 @@ const InstallationService = () => {
   const [title, setTitle] = useState("Precio de Instalación de Fibra"); // Título inicial
 
   const animationVariants = {
-    hidden: { opacity: 0, y: -25 },
+    hidden: { opacity: 0, y: -50 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 120, damping: 14 },
+      transition: { type: "spring", stiffness: 120, damping: 14, delay: 0.2, duration: 0.45 },
     },
   };
 
-  const left = {
-    hidden: { opacity: 0, x: 25 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { type: "spring", stiffness: 120, damping: 14 },
-    },
-  };
-
-  const right = {
-    hidden: { opacity: 0, x: -25 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { type: "spring", stiffness: 120, damping: 14 },
-    },
-  };
 
   const handlePlanChange = (plan) => {
     setSelectedPlan(plan);
     // Actualizar el título según el plan seleccionado
     setTitle(
       plan === "fiber"
-        ? "Precio de Instalación de Fibra"
-        : "Precio de Instalación de Antena"
+        ? "Instalación de Fibra"
+        : "Instalación de Antena"
     );
   };
 
@@ -93,7 +76,7 @@ const InstallationService = () => {
               className="flex flex-col justify-center  text-lg ml-8"
             >
               <motion.h2
-                className={`text-4xl text-center font-semibold mb-6 ${
+                className={`text-4xl font-semibold mb-6 ${
                   selectedPlan === "fiber" ? "text-red-500" : "text-blue-500"
                 }`} // Cambia el color del título
                 initial="hidden"
@@ -199,12 +182,12 @@ const InstallationService = () => {
             selectedPlan === "fiber"
               ? "bg-red-500 text-white" // Cambia el color del botón a rojo
               : "bg-white text-black border-box"
-          } px-4 py-2 rounded-2xl w-[170px] font-semibold`}
+          } px-4 py-2 rounded-2xl font-semibold`}
           onClick={() => handlePlanChange("fiber")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
         >
-          Plan de Fibra
+          Servicio de Fibra
         </motion.button>
         <motion.button
           initial="hidden"
@@ -214,12 +197,12 @@ const InstallationService = () => {
             selectedPlan === "antena"
               ? "bg-blue-500 text-white"
               : "bg-white text-black border-box"
-          } px-4 py-2 rounded-2xl w-[170px] font-semibold`}
+          } px-4 py-2 rounded-2xl font-semibold`}
           onClick={() => handlePlanChange("antena")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
         >
-          Plan de Antena
+          Servicio de Antena
         </motion.button>
       </motion.div>
     </section>

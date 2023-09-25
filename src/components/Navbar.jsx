@@ -31,7 +31,7 @@ const Navbar = () => {
             <li>Servicios</li>
           </a>
           <a href="#plans">
-            <li className="relative z-10 peer">Planes</li>{" "}
+            <li className="relative z-10 peer">Planes</li>
           </a>
           <RouteLink to="tutorials">
             <li>Tutoriales</li>

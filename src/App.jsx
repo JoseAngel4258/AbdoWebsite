@@ -9,11 +9,16 @@ import InstallationService from "./components/InstallationService";
 import Navbar from "./components/Navbar.jsx";
 import Video from "./components/Video";
 import PlansCardHeizahn from "./components/PlansCardHeaizahn";
+import VSOL from "./pages/Tutorials/VSOL/VSOL";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../src/pages/Home/Home";
 import Tutorials from "../src/pages/Tutorials/Tutorials";
 import NotFound from "../src/pages/Tutorials/NotFound";
+import ADC from "./pages/Tutorials/ADC/ADC";
+import Tenda from "./pages/Tutorials/Tenda/Tenda";
+import SpeedTest from "./pages/Tutorials/SpeedTest/SpeedTest";
+import NetworkAnalyzer from "./pages/Tutorials/NetworkAnalyzer/NetworkAnalyzer";
 
 const App = () => {
   return (
@@ -48,6 +53,11 @@ const App = () => {
               }
             />
             <Route path="/tutorials" element={<Tutorials />} />
+            <Route path="/tutorials/vsol" element={<VSOL />} />
+            <Route path="/tutorials/adc" element={<ADC />} />
+            <Route path="/tutorials/tenda" element={<Tenda />} />
+            <Route path="/tutorials/speedtest" element={<SpeedTest />} />
+            <Route path="/tutorials/networkanalyzer" element={<NetworkAnalyzer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
