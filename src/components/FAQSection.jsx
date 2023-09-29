@@ -107,7 +107,7 @@ const FAQSection = () => {
         animate={inView ? "visible" : "hidden"}
         exit="hidden"
         variants={down}
-        className="flex items-center absolute bottom-0"
+        className="flex items-center absolute bottom-0 px-5 "
       >
         <ul className="flex flex-row gap-4 mb-7">
           <li>
