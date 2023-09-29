@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { up, left, right } from "../assets/motion";
+import { left, right } from "../assets/motion";
 
 const InstallationService = () => {
   const [ref, inView] = useInView({
@@ -54,14 +54,14 @@ const InstallationService = () => {
         animate={inView ? "visible" : "hidden"}
         exit="hidden"
         variants={animationVariants}
-        className="rounded-xl flex flex-col md:flex-row h-[85%] mt-6"
+        className="rounded-xl flex flex-col md:flex-row h-[85%] mt-6 justify-center"
       >
         <div className="md:w-1/2">
-          <div className="max-w-[100%] h-full flex justify-center items-center">
+          <div className="max-w-[100%] h-full flex justify-center items-end min-[392px]:items-center">
             <motion.img
               src={imageSource}
               alt="Installation Service"
-              className="object-cover h-[70%] w-[90%] rounded-2xl"
+              className="object-cover h-[60%] md:h-[70%] w-[90%] rounded-2xl mb-4"
               initial="hidden"
               animate="visible"
               exit="hidden"
@@ -73,10 +73,10 @@ const InstallationService = () => {
           <AnimatePresence mode="wait">
             <div
               key={selectedPlan}
-              className="flex flex-col justify-center  text-lg ml-8"
+              className="flex flex-col justify-center  text-lg lg:ml-8"
             >
               <motion.h2
-                className={`text-4xl font-semibold mb-6 ${
+                className={`text-2xl min-[392px]:text-3xl md:text-4xl px-8 md:px-0 text-justify font-semibold ${
                   selectedPlan === "fiber" ? "text-red-500" : "text-blue-500"
                 }`} // Cambia el color del título
                 initial="hidden"
@@ -87,7 +87,7 @@ const InstallationService = () => {
                 {title}
               </motion.h2>
               <motion.p
-                className="text-gray-700 mb-4 text-lg px-8" // Tamaño y color del texto
+                className="text-gray-700 mb-4 text-sm min-[392px]:text-base md:text-lg my-3 md:my-6 px-8" // Tamaño y color del texto
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -95,7 +95,7 @@ const InstallationService = () => {
               >
                 {serviceText}
               </motion.p>
-              <ul className="list-disc list-inside text-xl">
+              <ul className="list-disc list-inside text-xs text-justify md:text-xl min-[392px]:text-lg px-8 md:px-0 ">
                 {selectedPlan === "fiber" ? (
                   <>
                     <motion.li
@@ -173,7 +173,7 @@ const InstallationService = () => {
           </AnimatePresence>
         </div>
       </motion.div>
-      <motion.div className="flex justify-center items-center gap-4 -mt-6 text-lg">
+      <motion.div className="flex justify-center items-center gap-4 -mt-6 text-sm md:text-lg p-6 md:px-0">
         <motion.button
           initial="hidden"
           animate={inView ? "visible" : "hidden"}

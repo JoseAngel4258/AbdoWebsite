@@ -10,9 +10,11 @@ import Navbar from "./components/Navbar.jsx";
 import Video from "./components/Video";
 import PlansCardHeizahn from "./components/PlansCardHeaizahn";
 import VSOL from "./pages/Tutorials/VSOL/VSOL";
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../src/pages/Home/Home";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
 import Tutorials from "../src/pages/Tutorials/Tutorials";
 import NotFound from "../src/pages/Tutorials/NotFound";
 import ADC from "./pages/Tutorials/ADC/ADC";
@@ -20,11 +22,12 @@ import Tenda from "./pages/Tutorials/Tenda/Tenda";
 import SpeedTest from "./pages/Tutorials/SpeedTest/SpeedTest";
 import NetworkAnalyzer from "./pages/Tutorials/NetworkAnalyzer/NetworkAnalyzer";
 
+
 const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className="h-[100vh] md:snap-y md:snap-mandatory md:overflow-auto scroll-smooth font-inter bg-gradient-to-t from-slate-200 to-white">
+        <div className="h-[100vh] lg:snap-y lg:snap-mandatory lg:overflow-auto overflow-x-hidden scroll-smooth font-inter bg-gradient-to-t from-slate-200 to-white">
           <Routes>
             <Route
               path="/"
@@ -35,10 +38,11 @@ const App = () => {
                   <section id="home">
                     <Hero />
                   </section>
-                  <section id="about">
+               
+                    {/* <AboutMobile/> */}
                     <About />
                     <Product />
-                  </section>
+                 
                   <Video />
                   <section id="services">
                     <InstallationService />
@@ -57,7 +61,10 @@ const App = () => {
             <Route path="/tutorials/adc" element={<ADC />} />
             <Route path="/tutorials/tenda" element={<Tenda />} />
             <Route path="/tutorials/speedtest" element={<SpeedTest />} />
-            <Route path="/tutorials/networkanalyzer" element={<NetworkAnalyzer />} />
+            <Route
+              path="/tutorials/networkanalyzer"
+              element={<NetworkAnalyzer />}
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

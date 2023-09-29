@@ -42,16 +42,23 @@ const Product = ({ imageSrc, title, description }) => {
   }, [controls, inView]);
 
   return (
-    <section className="h-screen snap-center flex">
-      <div className="w-1/2">
+    <section className="lg:h-full snap-center flex flex-col lg:flex-row overflow-hidden mb-10 lg:mb-0">
+      <div className="flex lg:hidden justify-center items-center w-full ">
         <img
-          src="/img/1.jpg"
+          src="/img/vsol.png"
           alt="Imagen de la empresa"
-          className="w-full h-full object-cover"
+          className="w-[90%] md:w-[80%] h-full object-cover"
         />
       </div>
-      <div className="w-1/2 flex flex-col justify-center items-center px-20">
-        <h2 className="text-4xl font-bold mb-4">
+      <div className="hidden lg:flex w-full lg:w-1/2 justify-center items-center ">
+        <img
+          src="/img/vsol.png"
+          alt="Imagen de la empresa"
+          className="w-[80%] object-cover"
+        />
+      </div>
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-12 text-center h-[50%] md:h-full">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-5 md:mt-0">
           Internet de fibra óptica y conexión inalámbrica sin límites
         </h2>
         <p className="text-lg mt-4 text-justify">
@@ -59,11 +66,14 @@ const Product = ({ imageSrc, title, description }) => {
           nuestros productos y servicios. Con más de 15 años de experiencia,
           hemos estado superando las expectativas de hogares y empresas en toda
           América. <br />
-          <br /> Nuestro equipo de profesionales está comprometido en
-          transformar tu experiencia con nuestros servicios, agregando un toque
-          humano en cada proceso dentro de nuestra organización. En resumen,
-          somos tu socio confiable en la búsqueda de soluciones de conectividad
-          de alta calidad.
+          <br />{" "}
+          <span className="hidden md:block">
+            Nuestro equipo de profesionales está comprometido en transformar tu
+            experiencia con nuestros servicios, agregando un toque humano en
+            cada proceso dentro de nuestra organización. En resumen, somos tu
+            socio confiable en la búsqueda de soluciones de conectividad de alta
+            calidad.
+          </span>
         </p>
       </div>
     </section>

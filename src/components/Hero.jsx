@@ -6,6 +6,7 @@ import {
 } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
 import { setHeroSectionState } from "./actions";
+import { motion, useAnimation } from "framer-motion";
 
 function Hero() {
   const slides = [
@@ -98,7 +99,7 @@ function Hero() {
         className="w-full h-full  bg-center bg-cover duration-500 shadow-lg"
       ></div>
       {/* Left Arrow */}
-      <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-10 rounded-full p-1 bg-black/40 text-2xl text-white cursor-pointer">
+      <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-10 rounded-full p-1 bg-black/40 text-2xl text-white cursor-pointer hidden md:block">
         <MdOutlineKeyboardArrowLeft
           className="hover:text-gray-300 transition-all"
           onClick={prevSlide}
@@ -106,16 +107,20 @@ function Hero() {
         />
       </div>
       {/* Right Arrow */}
-      <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-10 rounded-full p-1 bg-black/40 text-2xl text-white cursor-pointer">
+      <div className="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-10 rounded-full p-1 bg-black/40 text-2xl text-white cursor-pointer hidden md:block">
         <MdOutlineKeyboardArrowRight
           className="hover:text-gray-300 transition-all"
           onClick={nextSlide}
           size={60}
         />
       </div>
-      <div className="relative inset-x-0 bottom-[40px] flex justify-center">
+      <div
+        
+        className="relative inset-x-0 bottom-[40px] flex justify-center"
+      >
         {slides.map((_, slideIndex) => (
           <div
+          
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
             className={`text-2xl cursor-pointer ${

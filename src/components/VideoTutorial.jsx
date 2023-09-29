@@ -3,12 +3,10 @@ import React from "react";
 const VideoTutorial = ({ videoSrc }) => {
   return (
     <iframe
-      className="my-10"
-      width="760"
-      height="420"
+      className="my-10 rounded-2xl h-[300px] w-[88%] md:h-[420px] lg:w-[760px]"
       src={videoSrc}
       title="YouTube video player"
-      frameborder="0"
+      frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
     ></iframe>
   );

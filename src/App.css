@@ -190,16 +190,18 @@ html {
   border: none;
 }
 
-.header-in-hero:hover {
-  background-color: rgb(255, 255, 255);
-  color: #5b5b5b;
-  border-bottom: 2px solid #cccccc;
-  text-shadow: none;
+@media screen and (min-width: 768px) {
+  .header-in-hero:hover {
+    background-color: rgb(255, 255, 255);
+    color: #5b5b5b;
+    border-bottom: 2px solid #cccccc;
+    text-shadow: none;
+  }
 }
 
 .header-in-video {
   opacity: 0;
-    transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .header-in-video:hover {
@@ -263,6 +265,22 @@ html {
   text-shadow: none;
 }
 
-.border-box{
+.border-box {
   border: 2px solid #888888;
+}
+
+@keyframes open-menu {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.open-menu {
+  animation: open-menu 0.5s ease-in forwards;
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { AnimatePresence } from "framer-motion";
+import { left, right } from "../assets/motion";
 
-const About = ({ imageSrc, title, description }) => {
+const About = () => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
+    triggerOnce: false, // Configura triggerOnce en false para animar cada vez que se hace visible
   });
 
   const controls = useAnimation();
@@ -42,29 +43,60 @@ const About = ({ imageSrc, title, description }) => {
   }, [controls, inView]);
 
   return (
-    <section className="h-screen snap-center flex">
-      <div className="w-1/2 flex flex-col justify-center items-center px-20">
-        <h2 className="text-4xl font-bold mb-4">¿Quiénes Somos?</h2>
-        <p className="text-lg mt-4 text-justify">
+    <section
+      ref={ref}
+      id="about"
+      className="lg:h-screen w-screen snap-center flex flex-col lg:flex-row overflow-hidden"
+    >
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={right}
+        className="flex lg:hidden justify-center items-center w-full "
+      >
+        <img
+          src="/img/logo.png"
+          alt="Imagen de la empresa"
+          className="w-[90%] md:w-[80%] h-full object-cover"
+        />
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={right}
+        className="lg:w-1/2 lg:h-full flex flex-col justify-center items-center px-6 md:p-12 text-center md:-mt-36 lg:mt-0 mb-10 lg:mb-0"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Quiénes Somos?</h2>
+        <p className="text-lg md:text-xl mt-4 text-justify">
           En nuestra empresa, nos destacamos por ofrecer calidad e innovación en
           nuestros productos y servicios. Con más de 15 años de experiencia,
           hemos estado superando las expectativas de hogares y empresas en toda
           América. <br />
-          <br /> Nuestro equipo de profesionales está comprometido en
-          transformar tu experiencia con nuestros servicios, agregando un toque
-          humano en cada proceso dentro de nuestra organización. En resumen,
-          somos tu socio confiable en la búsqueda de soluciones de conectividad
-          de alta calidad.
+          <br />{" "}
+          <span className="hidden md:block">
+            Nuestro equipo de profesionales está comprometido en transformar tu
+            experiencia con nuestros servicios, agregando un toque humano en
+            cada proceso dentro de nuestra organización. En resumen, somos tu
+            socio confiable en la búsqueda de soluciones de conectividad de alta
+            calidad.
+          </span>
         </p>
-      </div>
+      </motion.div>
 
-      <div className="w-1/2">
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={right}
+        className="hidden lg:flex justify-center items-center"
+      >
         <img
-          src="/img/3.jpg"
+          src="/img/logo.png"
           alt="Imagen de la empresa"
-          className="w-full h-full object-cover"
+          className="w-[73%]
+           object-cover"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

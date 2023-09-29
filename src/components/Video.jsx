@@ -51,7 +51,7 @@ const Video = () => {
             autoPlay
             muted
             loop
-            className="h-[100%] w-full object-cover snap-center brightness-75"
+            className="h-[100%] w-full object-cover snap-center"
           >
             <source src={videoSource} type="video/mp4" />
           </video>

@@ -1,86 +1,73 @@
-import React from 'react'
+import React from "react";
+import { motion, inView } from "framer-motion";
+import { down } from "../../../assets/motion";
+import VideoTutorial from "../../../components/VideoTutorial";
+import Navbar from "../../../components/Navbar";
 
 const ADC = () => {
   return (
-    <section className="w-screen flex flex-col gap-20">
-      <div className="h-20"></div>
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="text-[40px]">Cambio de contraseña Router ADC</h1>
+    <>
+      <Navbar />
+      <section className=" flex flex-col gap-20 justify-center">
+        <div className="h-12"></div>
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-2xl text-center md:text-[36px] md:leading-[41px] lg:leading-none">
+            Cambio de nombre Router ADC
+          </h1>
 
-        <iframe
-          className="my-10"
-          width="640"
-          height="340"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-        <p className="text-lg">
-          Para administrar el router deben ingresar a la dirección: 192.168.1.1{" "}
-          <br />
-          <br />
-          Usuario: admin <br />
-          <br /> Contraseña: stdONU101. <br />
-          <br />
-          El nombre del wifi lo cambian en el mismo menú, la opción se llama
-          "SSID".
-        </p>
-      </div>
+          <VideoTutorial videoSrc="https://www.youtube.com/embed/jte-J2n8WuE?si=uibbHUTmr0-c9Nav" />
 
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="text-[40px]">Tutorial de lista blanca ADC</h1>
+          <p className="text-lg text-justify mx-auto px-5 lg:px-[100px]">
+            Para comenzar, necesitarás ingresar a la dirección de administración
+            del router, que es 192.128.1.1 en tu navegador web.
+            <br />
+            <br /> Una vez allí, iniciarás sesión con los siguientes datos:{" "}
+            <br />
+            <br /> Usuario: user <br />
+            <br /> Contraseña: user
+          </p>
+        </div>
 
-        <iframe
-          className="my-10"
-          width="640"
-          height="340"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-        <p className="text-lg">
-          Para administrar el router deben ingresar a la dirección: 192.168.1.1{" "}
-          <br />
-          <br />
-          Usuario: admin <br />
-          <br /> Contraseña: stdONU101. <br />
-          <br />
-          El nombre del wifi lo cambian en el mismo menú, la opción se llama
-          "SSID".
-        </p>
-      </div>
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-2xl text-center md:text-[36px] md:leading-[41px] lg:leading-none">
+            Cambio de contraseña Router ADC
+          </h1>
 
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="text-[40px]">Tutorial de lista negra ADC</h1>
+          <VideoTutorial videoSrc="https://www.youtube.com/embed/M8O8jKNyQpI?si=kZkAhVsSPEmJ93xK" />
 
-        <iframe
-          className="my-10"
-          width="640"
-          height="340"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-        <p className="text-lg">
-          Para administrar el router deben ingresar a la dirección: 192.168.1.1{" "}
-          <br />
-          <br />
-          Usuario: admin <br />
-          <br /> Contraseña: stdONU101. <br />
-          <br />
-          El nombre del wifi lo cambian en el mismo menú, la opción se llama
-          "SSID".
-        </p>
-      </div>
-      <div className="h-20"></div>
-    </section>
+          <p className="text-lg text-justify mx-auto px-5 lg:px-[100px]">
+            Para comenzar, necesitarás ingresar a la dirección de administración
+            del router, que es 192.168.1.1 en tu navegador web.
+            <br />
+            <br /> Una vez allí, iniciarás sesión con los siguientes datos:{" "}
+            <br />
+            <br /> Usuario: user <br />
+            <br /> Contraseña: user
+          </p>
+        </div>
+
+        <motion.footer
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          exit="hidden"
+          variants={down}
+          className="flex items-center justify-center w-full"
+        >
+          <ul className="flex flex-row gap-4 mb-7">
+            <li>
+              <a href="#inicio">Abdo77 © 2023</a>
+            </li>
+            <li>
+              <a href="">Privacidad y legal</a>
+            </li>
+            <li>
+              <a href="https://wa.me/584128322236">Contacto </a>
+            </li>
+          </ul>
+        </motion.footer>
+      </section>
+    </>
   );
-}
+};
 
-export default ADC
+export default ADC;

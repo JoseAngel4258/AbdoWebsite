@@ -5,6 +5,13 @@ import { useInView } from "react-intersection-observer";
 import { up, left, right } from "../assets/motion";
 
 const PlansCardHeizahn = () => {
+  const [expandedImage, setExpandedImage] = useState(null);
+
+  const handleImageClick = (index) => {
+    setExpandedImage(index);
+  };
+
+  const images = ["/img/1.jpg", "/img/2.jpg", "/img/3.jpg"];
   const [selectedOption, setSelectedOption] = useState("fibra");
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -25,7 +32,7 @@ const PlansCardHeizahn = () => {
     visible: {
       opacity: 1,
       scale: 0.95,
-      transition: { type: "easeIn", duration: 0.521, },
+      transition: { type: "easeIn", duration: 0.521 },
     },
   };
 
@@ -40,42 +47,37 @@ const PlansCardHeizahn = () => {
   return (
     <section
       id="service"
-      className="h-[100vh] w-screen md:snap-center flex justify-center items-center text-lg"
+      className="h-[100vh] w-screen md:snap-center flex justify-center items-center text-lg snap-center"
       ref={ref}
     >
       <div className="flex flex-col items-center justify-center">
-        <div>
-          <motion.h1
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={up}
-            className="text-5xl font-semibold"
-          >
-            Planes
-          </motion.h1>
-        </div>
         <motion.div
-          className="contenedor"
+          className="flex"
           variants={containerVariants}
           initial="hidden"
           animate={controls}
         >
           {selectedOption === "fibra" ? (
             <>
-              <div className="box one" dataText="plan1"></div>
-              <div className="box two" dataText="plan2"></div>
-              <div className="box three" dataText="plan3"></div>
+              <div className="contenedorFibra contenedor">
+                {" "}
+                <div className="box one"></div>
+                <div className="box two"></div>
+                <div className="box three"></div>
+              </div>
             </>
           ) : (
             <>
-              <div className="box one" dataText="plan5"></div>
-              <div className="box two" dataText="plan6"></div>
-              <div className="box three" dataText="plan7"></div>
+              <div className="contenedorAntena contenedor">
+                {" "}
+                <div className="box one"></div>
+                <div className="box two"></div>
+              </div>
             </>
           )}
         </motion.div>
 
-        <div className="mt-24 flex gap-[13px]">
+        <div className="md:mt-24 flex gap-[13px] px-8 md:px-0">
           <motion.button
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -84,7 +86,7 @@ const PlansCardHeizahn = () => {
               selectedOption === "fibra"
                 ? "bg-slate-700 text-white"
                 : "bg-white text-black  border-box"
-            } px-4 py-2 rounded-2xl font-semibold`}
+            } text-sm px-4 py-2 rounded-2xl font-semibold`}
             onClick={() => handleOptionChange("fibra")}
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.97 }}
@@ -99,7 +101,7 @@ const PlansCardHeizahn = () => {
               selectedOption === "antena"
                 ? "bg-slate-700 text-white "
                 : "bg-white text-black border-box"
-            } px-4 py-2 rounded-2xl font-semibold`}
+            } text-sm px-4 py-2 rounded-2xl font-semibold`}
             onClick={() => handleOptionChange("antena")}
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.97 }}

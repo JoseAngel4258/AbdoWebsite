@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { up, down, right } from "../assets/motion";
+import { up, down } from "../assets/motion";
 
 const FAQSection = () => {
   const data = [
     {
-      question: "¿A qué zonas de Güigüe llega Abdo77?",
+      question: "• ¿A qué zonas de Güigüe llega Abdo77?",
       answer:
         "Los Garcías, Las Tiamitas, Guaica, El Venado, La Linda, Güigüe, Inavi, Parque Azul, Buena Ventura, Parque Encantado, El Uno, La Aduana, La Primavera, 5 de Julio, Pared de Piedra, el Trompillo y Las Colonias.",
     },
     {
-      question: "¿Cómo realizo mi solicitud de instalación?",
+      question: "• ¿Cómo realizo mi solicitud de instalación?",
       answer:
         "Puedes dirigirte a nuestra oficina principal, Inversiones ABDO 77 C.A., ubicada en la Avenida Miranda, Local N° 2, Güigüe (al frente de MRW) o escribiéndonos a nuestro número de teléfono por WhatsApp: +58 412-8322236",
     },
     {
       question:
-        "¿Qué planes tienen para el área residencial y el área corporativa?",
+        "• ¿Qué planes tienen para el área residencial y el área corporativa?",
       answer: "Planes desde 30Mbps hasta 100Mbps.",
     },
     {
-      question: "¿Se cae la conexión si llueve?",
+      question: "• ¿Se cae la conexión si llueve?",
       answer:
         "No, el servicio de fibra óptica no se ve afectado por las condiciones climatológicas.",
     },
@@ -72,18 +72,18 @@ const FAQSection = () => {
             </h2>
           </motion.div>
 
-          <div className="flex flex-col sm:px-8 lg:px-12 xl:px-32 text-lg select-none">
+          <div className="flex flex-col sm:px-8 lg:px-12 xl:px-32 text-lg select-none list-none">
             {data.map((item, index) => (
               <motion.div
                 key={index}
                 className="faq-item"
                 initial="hidden"
                 animate={controls}
-                variants={down}
+                variants={up}
                 transition={{ duration: 1.5 }} // Agrega un retraso entre las animaciones
               >
                 <motion.summary
-                  className={`py-2 outline-none cursor-pointer focus:text-gray-200 ${
+                  className={`py-2 outline-none cursor-pointer focus:text-gray-200 px-8 ${
                     openIndex === index ? "open" : ""
                   }`}
                   onClick={() => handleToggle(index)}
@@ -91,7 +91,7 @@ const FAQSection = () => {
                   {item.question}
                 </motion.summary>
                 <motion.div
-                  className={`px-4 pb-4 overflow-hidden ${
+                  className={` pb-4 overflow-hidden px-8 ${
                     openIndex === index ? "block" : "hidden"
                   }`}
                 >
@@ -102,7 +102,7 @@ const FAQSection = () => {
           </div>
         </div>
       </div>
-      <motion.foot
+      <motion.footer
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         exit="hidden"
@@ -111,16 +111,16 @@ const FAQSection = () => {
       >
         <ul className="flex flex-row gap-4 mb-7">
           <li>
-            <a href="">Abdo77 © 2023</a>
+            <a href="#inicio">Abdo77 © 2023</a>
           </li>
           <li>
             <a href="">Privacidad y legal</a>
           </li>
           <li>
-            <a href="">Contacto </a>
+            <a href="https://wa.me/584128322236">Contacto </a>
           </li>
         </ul>
-      </motion.foot>
+      </motion.footer>
     </section>
   );
 };
