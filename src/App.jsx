@@ -38,11 +38,11 @@ const App = () => {
                   <section id="home">
                     <Hero />
                   </section>
-               
-                    {/* <AboutMobile/> */}
-                    <About />
-                    <Product />
-                 
+
+                  {/* <AboutMobile/> */}
+                  <About />
+                  <Product />
+
                   <Video />
                   <section id="services">
                     <InstallationService />
@@ -56,7 +56,10 @@ const App = () => {
                 </>
               }
             />
-            <Route path="/tutorials" element={<Tutorials />} />
+            <Route
+              path="https://https://imaginative-liger-3953a4.netlify.app/tutorials"
+              element={<Tutorials />}
+            />
             <Route path="/tutorials/vsol" element={<VSOL />} />
             <Route path="/tutorials/adc" element={<ADC />} />
             <Route path="/tutorials/tenda" element={<Tenda />} />
