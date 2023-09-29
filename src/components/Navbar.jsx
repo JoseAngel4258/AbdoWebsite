@@ -73,8 +73,8 @@ const Navbar = () => {
                   <a href="#plans">
                     <li className="relative z-10 peer">Planes</li>
                   </a>
-                  <RouteLink to="tutorials">
-                    <li onClick="scroll(0, 0);" >Tutoriales</li>
+                  <RouteLink to="/tutorials">
+                    <li onClick="scroll(0, 0);">Tutoriales</li>
                   </RouteLink>
                 </ul>
               ) : (
@@ -164,7 +164,7 @@ const Navbar = () => {
                 <a onClick={toggleVisibility} href="#plans">
                   Planes
                 </a>
-                <RouteLink to="tutorials">
+                <RouteLink to="/tutorials">
                   <a onClick="scroll(0, 0);">Tutoriales</a>
                 </RouteLink>
                 <li className="button-info-personal text-no-shadow">
