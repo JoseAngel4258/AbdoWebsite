@@ -36,24 +36,24 @@ const Navbar = () => {
             <div>
               {isInHeroSection ? (
                 <RouteLink to="/">
-                  <a onClick="scroll(0, 0);">
+                  <div onClick="scroll(0, 0);">
                     {" "}
                     <img
                       className="h-[42px] md:h-[57px] w-[123px] md:w-[170px] object-cover"
                       src="/img/logoConContorno.png"
                       alt="logo_abdo"
                     />
-                  </a>
+                  </div>
                 </RouteLink>
               ) : (
                 <RouteLink to="/">
-                  <a onClick="scroll(0, 0);">
+                  <div onClick="scroll(0, 0);">
                     <img
                       className="h-[42px] md:h-[57px] w-[123px] md:w-[170px] object-cover"
                       src="/img/logo.png"
                       alt="logo_abdo"
                     />
-                  </a>
+                  </div>
                 </RouteLink>
               )}
             </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
                     <li className="relative z-10 peer">Planes</li>
                   </a>
                   <RouteLink to="tutorials">
-                    <li onClick="scroll(0, 0);">Tutoriales</li>
+                    <li onClick="scroll(0, 0);" >Tutoriales</li>
                   </RouteLink>
                 </ul>
               ) : (

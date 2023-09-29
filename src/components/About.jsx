@@ -1,8 +1,7 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { AnimatePresence } from "framer-motion";
-import { left, right } from "../assets/motion";
+import { right } from "../assets/motion";
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -11,27 +10,6 @@ const About = () => {
 
   const controls = useAnimation();
 
-  // Define una animación de entrada con spring
-  const enter = {
-    hidden: { opacity: 0, y: -25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 120, damping: 14 },
-    },
-  };
-
-  // Define una animación de salida
-  const exit = {
-    hidden: { opacity: 0, y: 25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 120, damping: 14 },
-    },
-  };
-
-  // Detecta cambios en la visibilidad
   React.useEffect(() => {
     if (inView) {
       // Si la sección es visible, reproduce la animación de entrada
@@ -44,7 +22,6 @@ const About = () => {
 
   return (
     <section
-      ref={ref}
       id="about"
       className="lg:h-screen w-screen snap-center flex flex-col lg:flex-row overflow-hidden"
     >
@@ -62,10 +39,11 @@ const About = () => {
       </motion.div>
 
       <motion.div
+        ref={ref}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={right}
-        className="lg:w-1/2 lg:h-full flex flex-col justify-center items-center px-6 md:p-12 text-center md:-mt-36 lg:mt-0 mb-10 lg:mb-0"
+        className="lg:w-1/2 lg:h-full flex flex-col justify-center items-center px-6 md:p-12 text-center md:-mt-36 lg:mt-0 mb-32 lg:mb-0"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Quiénes Somos?</h2>
         <p className="text-lg md:text-xl mt-4 text-justify">
@@ -74,7 +52,7 @@ const About = () => {
           hemos estado superando las expectativas de hogares y empresas en toda
           América. <br />
           <br />{" "}
-          <span className="hidden md:block">
+          <span className="hidden sm:block">
             Nuestro equipo de profesionales está comprometido en transformar tu
             experiencia con nuestros servicios, agregando un toque humano en
             cada proceso dentro de nuestra organización. En resumen, somos tu
