@@ -23,8 +23,8 @@ const VSOL = () => {
             <br />
             <br /> Una vez allí, iniciarás sesión con los siguientes datos:{" "}
             <br />
-            <br /> Usuario: admin <br />
-            <br /> Contraseña: stdONU101.
+            <br /> Usuario: useradmin <br />
+            <br /> Contraseña: adminuser
             <br />
             <br />
             El nombre del wifi lo cambian en el mismo menú, la opción se llama
@@ -42,8 +42,8 @@ const VSOL = () => {
             Para comenzar, necesitarás ingresar a la dirección de administración
             del router, que es 192.168.1.1 en tu navegador web. <br />
             <br />
-            Usuario: admin <br />
-            <br /> Contraseña: stdONU101. <br />
+            Usuario: useradmin <br />
+            <br /> Contraseña: adminuser <br />
           </p>
         </div>
 
