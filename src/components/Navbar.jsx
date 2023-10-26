@@ -123,7 +123,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={toggleVisibility}
-              className="relative h-8 w-8 cursor-pointer text-3xl lg:hidden"
+              className="relative h-8 w-8 text-3xl lg:hidden cursor-default lg:cursor-pointer"
             >
               <div
                 className={`absolute top-4 -mt-0.5 h-1 w-8 rounded  transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded  before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded  after:transition-all after:duration-500 after:content-[''] ${
@@ -144,7 +144,7 @@ const Navbar = () => {
       >
         <button
           onClick={toggleVisibility}
-          className="absolute text-5xl pr-5 pt-5 md:pt-7 mb-12 right-0"
+          className="absolute text-5xl pr-5 pt-5 md:pt-7 mb-12 right-0 cursor-default lg:cursor-pointer"
         >
           X
         </button>

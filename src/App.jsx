@@ -22,7 +22,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className="h-[100vh] lg:snap-y lg:snap-mandatory lg:overflow-auto overflow-x-hidden scroll-smooth font-inter bg-gradient-to-t from-slate-200 to-white">
+        <div className="h-[100vh] lg:snap-y lg:snap-mandatory overflow-x-hidden scroll-smooth font-inter bg-gradient-to-t from-slate-200 to-white">
           <Routes>
             <Route
               path="/"

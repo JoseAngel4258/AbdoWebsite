@@ -11,24 +11,44 @@ import { motion, useAnimation } from "framer-motion";
 function Hero() {
   const slides = [
     {
-      url: "/img/1.jpg",
+      url: "/img/1.png",
     },
     {
-      url: "/img/2.jpg",
+      url: "/img/2.png",
     },
     {
-      url: "/img/3.jpg",
+      url: "/img/3.png",
     },
 
     {
-      url: "/img/4.jpg",
+      url: "/img/4.png",
     },
     {
-      url: "/img/5.jpg",
+      url: "/img/5.png",
+    },
+  ];
+
+  const slidesMobile = [
+    {
+      url: "/img/6.png",
+    },
+    {
+      url: "/img/7.png",
+    },
+    {
+      url: "/img/8.png",
+    },
+
+    {
+      url: "/img/9.png",
+    },
+    {
+      url: "/img/10.png",
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -90,41 +110,55 @@ function Hero() {
     };
   }, [dispatch]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className=" h-[100vh] w-screen relative group snap-center">
       <div
         ref={heroRef}
         id="inicio"
-        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full  bg-center bg-cover duration-500 shadow-lg"
+        style={{
+          backgroundImage: `url(${
+            width <= 768
+              ? slidesMobile[currentIndex].url
+              : slides[currentIndex].url
+          })`,
+        }}
+        className="w-full h-full bg-center bg-cover duration-500 shadow-lg"
       ></div>
       {/* Left Arrow */}
-      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-10 rounded-full p-1 bg-black/40 text-2xl text-white cursor-pointer outline-none">
+      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-10 rounded-full p-1 bg-black/40 hover:bg-white/70 text-2xl text-white outline-none cursor-default lg:cursor-pointer">
         <MdOutlineKeyboardArrowLeft
-          className="hover:text-gray-300 transition-all"
+          className="hover:text-red-600 duration-200"
           onClick={prevSlide}
           size={60}
         />
       </div>
       {/* Right Arrow */}
-      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-10 rounded-full p-1 bg-black/40 text-2xl text-white cursor-pointer outline-none">
+      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-10 rounded-full p-1 bg-black/40 hover:bg-white/70  text-2xl text-white outline-none cursor-default lg:cursor-pointer">
         <MdOutlineKeyboardArrowRight
-          className="hover:text-gray-300 transition-all"
+          className="hover:text-red-600 transition-all"
           onClick={nextSlide}
           size={60}
         />
       </div>
-      <div
-        
-        className="relative inset-x-0 bottom-[40px] flex justify-center"
-      >
+      <div className="relative inset-x-0 bottom-[40px] flex justify-center">
         {slides.map((_, slideIndex) => (
           <div
-          
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
-            className={`text-2xl cursor-pointer ${
-              slideIndex === currentIndex ? "text-blue-500" : "text-gray-100"
+            className={`text-2xl cursor-default lg:cursor-pointer drop-shadow-xl ${
+              slideIndex === currentIndex ? "text-red-600" : "text-white"
             }`}
           >
             <RxDotFilled size={30} />
