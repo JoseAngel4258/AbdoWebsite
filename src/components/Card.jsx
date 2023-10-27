@@ -25,7 +25,7 @@ const Card = ({
             </p>
             <RouteLink to={TutorialLinks}>
               <div>
-                <button className="text-xl border-[3px] border-slate-700 hover:border-slate-600 hover:bg-slate-700 p-3 rounded-2xl transition-all">
+                <button className="text-xl border-[3px] border-slate-700 hover:border-slate-600 hover:bg-slate-700 p-3 rounded-2xl transition-all cursor-default lg:cursor-pointer">
                   Ver más...
                 </button>
               </div>

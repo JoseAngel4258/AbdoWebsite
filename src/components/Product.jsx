@@ -23,7 +23,7 @@ const Product = () => {
   return (
     <section
       ref={ref}
-      className="lg:h-full snap-center flex flex-col lg:flex-row overflow-hidden mb-10 lg:mb-0"
+      className="lg:h-full snap-center flex flex-col lg:flex-row overflow-hidden mb-10 lg:mb-0 -mt-16 lg:mt-0"
     >
       <motion.div
         initial="hidden"
@@ -32,7 +32,7 @@ const Product = () => {
         className="flex lg:hidden justify-center items-center w-full "
       >
         <img
-          src="/img/vsol.png"
+          src="/img/routervsol.png"
           alt="Imagen de la empresa"
           className="w-[90%] md:w-[80%] h-full object-cover"
         />
@@ -45,7 +45,7 @@ const Product = () => {
         className="hidden lg:flex w-full lg:w-1/2 justify-center items-center "
       >
         <img
-          src="/img/vsol.png"
+          src="/img/routervsol.png"
           alt="Imagen de la empresa"
           className="w-[80%] object-cover"
         />
@@ -54,18 +54,18 @@ const Product = () => {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={left}
-        className="w-full lg:w-1/2 flex flex-col justify-center items-center p-12 text-center h-[50%] md:h-full"
+        className="w-full lg:w-1/2 flex flex-col justify-center items-center px-8 pt-12 md:p-12 h-[50%] md:h-full"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-5 md:mt-0">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-7 md:mt-0">
           Internet de fibra óptica y conexión inalámbrica sin límites
         </h2>
-        <p className="text-lg mt-4 text-justify">
+        <p className="text-lg md:text-xl mt-4 text-left indent-4">
           En nuestra empresa, nos destacamos por ofrecer calidad e innovación en
           nuestros productos y servicios. Con más de 15 años de experiencia,
           hemos estado superando las expectativas de hogares y empresas en toda
           América. <br />
           <br />{" "}
-          <span className="hidden md:block">
+          <span className="text-lg md:text-xl mt-4 text-left indent-4">
             Nuestro equipo de profesionales está comprometido en transformar tu
             experiencia con nuestros servicios, agregando un toque humano en
             cada proceso dentro de nuestra organización. En resumen, somos tu

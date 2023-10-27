@@ -24,11 +24,11 @@ const VSOL = () => {
             <br /> Una vez allí, iniciarás sesión con los siguientes datos:{" "}
             <br />
             <br /> Usuario: useradmin <br />
-            <br /> Contraseña: adminuser
+            <br /> Contraseña: adminuser123
             <br />
             <br />
             El nombre del wifi lo cambian en el mismo menú, la opción se llama
-            "SSID".
+            'SSID'.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ const VSOL = () => {
             del router, que es 192.168.1.1 en tu navegador web. <br />
             <br />
             Usuario: useradmin <br />
-            <br /> Contraseña: adminuser <br />
+            <br /> Contraseña: adminuser123 <br />
           </p>
         </div>
 
@@ -58,8 +58,8 @@ const VSOL = () => {
             <br />
             <br /> Una vez allí, iniciarás sesión con los siguientes datos:{" "}
             <br />
-            <br /> Usuario: user <br />
-            <br /> Contraseña: user
+            <br /> Usuario: useradmin <br />
+            <br /> Contraseña: adminuser123
           </p>
         </div>
 
@@ -72,13 +72,22 @@ const VSOL = () => {
         >
           <ul className="flex flex-row gap-4 mb-7">
             <li>
-              <a href="#inicio">Abdo77 © 2023</a>
+              <a className="cursor-default lg:cursor-pointer" href="#inicio">
+                Abdo77 © 2023
+              </a>
             </li>
             <li>
-              <a href="">Privacidad y legal</a>
+              <a className="cursor-default lg:cursor-pointer" href="">
+                Privacidad y legal
+              </a>
             </li>
             <li>
-              <a href="https://wa.me/584128322236">Contacto </a>
+              <a
+                className="cursor-default lg:cursor-pointer"
+                href="https://wa.me/584128322236"
+              >
+                Contacto{" "}
+              </a>
             </li>
           </ul>
         </motion.footer>

@@ -9,24 +9,29 @@ const InstallationService = () => {
   });
 
   const [selectedPlan, setSelectedPlan] = useState("fiber");
-  const [title, setTitle] = useState("Precio de Instalación de Fibra"); // Título inicial
+  const [title, setTitle] = useState("Instalación de Fibra por $89.99"); // Título inicial
 
   const animationVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 120, damping: 14, delay: 0.2, duration: 0.45 },
+      transition: {
+        type: "spring",
+        stiffness: 120,
+        damping: 14,
+        delay: 0.2,
+        duration: 0.45,
+      },
     },
   };
-
 
   const handlePlanChange = (plan) => {
     setSelectedPlan(plan);
     // Actualizar el título según el plan seleccionado
     setTitle(
       plan === "fiber"
-        ? "Instalación de Fibra"
+        ? "Instalación de Fibra por $89.99"
         : "Instalación de Antena"
     );
   };
@@ -45,7 +50,7 @@ const InstallationService = () => {
 
   return (
     <section
-      className="h-screen flex flex-col items-center snap-center text-lg"
+      className="h-[650px] min-[390px]:h-[800px] lg:h-screen flex flex-col items-center snap-center text-lg px-6 mt-12 lg:mt-0"
       id="instalacion"
     >
       <motion.div
@@ -54,7 +59,7 @@ const InstallationService = () => {
         animate={inView ? "visible" : "hidden"}
         exit="hidden"
         variants={animationVariants}
-        className="rounded-xl flex flex-col md:flex-row h-[85%] mt-6 justify-center"
+        className="rounded-xl flex flex-col md:flex-row h-[85%] justify-center"
       >
         <div className="md:w-1/2">
           <div className="max-w-[100%] h-full flex justify-center items-end min-[392px]:items-center">
@@ -182,7 +187,7 @@ const InstallationService = () => {
             selectedPlan === "fiber"
               ? "bg-red-500 text-white" // Cambia el color del botón a rojo
               : "bg-white text-black border-box"
-          } px-4 py-2 rounded-2xl font-semibold`}
+          } px-4 py-2 rounded-2xl font-semibold cursor-default lg:cursor-pointer`}
           onClick={() => handlePlanChange("fiber")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
@@ -197,7 +202,7 @@ const InstallationService = () => {
             selectedPlan === "antena"
               ? "bg-blue-500 text-white"
               : "bg-white text-black border-box"
-          } px-4 py-2 rounded-2xl font-semibold`}
+          } px-4 py-2 rounded-2xl font-semibold cursor-default lg:cursor-pointer`}
           onClick={() => handlePlanChange("antena")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}

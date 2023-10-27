@@ -30,7 +30,6 @@ const Footer = () => {
         <li>Abdo77 © 2023</li>
         <li>Privacidad y legal</li>
         <li>Contacto</li>
-        <li>Tutoriales</li>
       </ul>
     </motion.div>
   );

@@ -43,22 +43,23 @@ const About = () => {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={right}
-        className="lg:w-1/2 lg:h-full flex flex-col justify-center items-center px-6 md:p-12 text-center md:-mt-36 lg:mt-0 mb-32 lg:mb-0"
+        className="lg:w-1/2 lg:h-full flex flex-col justify-center items-center px-8 md:p-12 -mt-16 lg:mt-0 mb-32 lg:mb-0"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Quiénes Somos?</h2>
-        <p className="text-lg md:text-xl mt-4 text-justify">
+        <p className="text-lg md:text-xl mt-4 text-left indent-4">
           En nuestra empresa, nos destacamos por ofrecer calidad e innovación en
           nuestros productos y servicios. Con más de 15 años de experiencia,
           hemos estado superando las expectativas de hogares y empresas en toda
-          América. <br />
-          <br />{" "}
-          <span className="hidden sm:block">
-            Nuestro equipo de profesionales está comprometido en transformar tu
-            experiencia con nuestros servicios, agregando un toque humano en
-            cada proceso dentro de nuestra organización. En resumen, somos tu
-            socio confiable en la búsqueda de soluciones de conectividad de alta
-            calidad.
-          </span>
+          América.
+        </p>
+        <br />
+        <br />{" "}
+        <p className="text-lg md:text-xl mt-4 text-left indent-4">
+          Nuestro equipo de profesionales está comprometido en transformar tu
+          experiencia con nuestros servicios, agregando un toque humano en cada
+          proceso dentro de nuestra organización. En resumen, somos tu socio
+          confiable en la búsqueda de soluciones de conectividad de alta
+          calidad.
         </p>
       </motion.div>
 

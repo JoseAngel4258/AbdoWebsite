@@ -1,11 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setVideoSectionState } from "./actions";
-import videoSource from "../assets/fondobg.mp4";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import video1 from "../assets/video1.mp4";
+import video2 from "../assets/video2.mp4";
 
 const Video = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [videoSource, setVideoSource] = useState(
+    width <= 768 ? "video2" : "video1"
+  );
+
   const dispatch = useDispatch();
   const videoRef = useRef(null);
   const videoSectionState = useSelector((state) => state.videoSectionState);
@@ -20,25 +24,42 @@ const Video = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          dispatch(setVideoSectionState(true)); // Dispara la acción para actualizar el estado
+          dispatch(setVideoSectionState(true));
         } else {
-          dispatch(setVideoSectionState(false)); // Dispara la acción para actualizar el estado
+          dispatch(setVideoSectionState(false));
         }
       });
     }, options);
 
-    // Comienza a observar el elemento de video cuando se monta el componente.
     if (videoRef.current) {
       observer.observe(videoRef.current);
     }
 
-    // Detén la observación cuando el componente se desmonta.
     return () => {
       if (videoRef.current) {
         observer.unobserve(videoRef.current);
       }
     };
   }, [dispatch]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newWidth = window.innerWidth;
+      setWidth(newWidth);
+
+      if (newWidth <= 768) {
+        setVideoSource("video2");
+      } else {
+        setVideoSource("video1");
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -53,7 +74,10 @@ const Video = () => {
             loop
             className="h-[100%] w-full object-cover snap-center"
           >
-            <source src={videoSource} type="video/mp4" />
+            <source
+              src={videoSource === "video1" ? video1 : video2}
+              type="video/mp4"
+            />
           </video>
         </div>
       </section>

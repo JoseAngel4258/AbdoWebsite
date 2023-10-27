@@ -54,7 +54,7 @@ const FAQSection = () => {
   return (
     <section
       id="question"
-      className="relative h-screen flex flex-col justify-center items-center snap-center pt-16 text-black "
+      className="relative h-[800px] lg:h-[100vh] flex flex-col justify-center items-center snap-center pt-16 text-black "
     >
       <div className="container flex flex-col justify-center p-4 mx-auto md:p-8 gap-y-4">
         <div className="-mt-10">
@@ -83,7 +83,7 @@ const FAQSection = () => {
                 transition={{ duration: 1.5 }} // Agrega un retraso entre las animaciones
               >
                 <motion.summary
-                  className={`py-2 outline-none cursor-pointer focus:text-gray-200 px-8 ${
+                  className={`py-2 outline-none cursor-default lg:cursor-pointer focus:text-gray-200 px-8 ${
                     openIndex === index ? "open" : ""
                   }`}
                   onClick={() => handleToggle(index)}
@@ -109,15 +109,24 @@ const FAQSection = () => {
         variants={down}
         className="flex items-center absolute bottom-0 px-5 "
       >
-        <ul className="flex flex-row gap-4 mb-7">
+        <ul className="flex flex-row gap-4 mb-7 ">
           <li>
-            <a href="#inicio">Abdo77 © 2023</a>
+            <a className="cursor-default lg:cursor-pointer" href="#inicio">
+              Abdo77 © 2023
+            </a>
           </li>
           <li>
-            <a href="">Privacidad y legal</a>
+            <a className="cursor-default lg:cursor-pointer" href="">
+              Privacidad y legal
+            </a>
           </li>
           <li>
-            <a href="https://wa.me/584128322236">Contacto </a>
+            <a
+              className="cursor-default lg:cursor-pointer"
+              href="https://wa.me/584128322236"
+            >
+              Contacto{" "}
+            </a>
           </li>
         </ul>
       </motion.footer>
