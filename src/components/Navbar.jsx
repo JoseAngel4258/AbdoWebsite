@@ -155,7 +155,7 @@ const Navbar = () => {
           X
         </button>
         <div className="flex flex-col w-full items-center justify-center min-h-[100vh]">
-          <nav className="flex flex-col justify-center items-center w-full text-6xl text-center">
+          <nav className="flex flex-col justify-center items-center w-full text-5xl text-center">
             {location.pathname === "/" ? (
               <ul className="gap-7 flex flex-col text-shadow w-full">
                 <a

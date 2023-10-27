@@ -72,8 +72,8 @@ const PlansCardHeizahn = () => {
 
   return (
     <section
-      id="service"
-      className="h-[600px] lg:h-[100vh] w-screen md:snap-  flex flex-col justify-center items-center text-lg snap-center mt-16 lg:mt-0"
+      id="plans"
+      className="h-[600px] lg:h-[100vh] w-screen md:snap-center  flex flex-col justify-center items-center text-lg snap-center mt-16 lg:mt-0"
       ref={ref}
     >
       <div className="flex flex-col items-center justify-center">
@@ -86,7 +86,7 @@ const PlansCardHeizahn = () => {
           {selectedOption === "fibra" ? (
             <div className="flex items-center justify-center cursor-default lg:cursor-pointer pt-12">
               <div
-                className="flip-card w-[390px] h-[700px] lg:w-[1060px] lg:h-[600px] rounded-xl"
+                className="flip-card w-[390px] h-[650px] lg:w-[1060px] lg:h-[600px] rounded-xl"
                 onClick={handleFlip}
               >
                 <motion.div

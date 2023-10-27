@@ -63,15 +63,16 @@ const Product = () => {
           En nuestra empresa, nos destacamos por ofrecer calidad e innovación en
           nuestros productos y servicios. Con más de 15 años de experiencia,
           hemos estado superando las expectativas de hogares y empresas en toda
-          América. <br />
-          <br />{" "}
-          <span className="text-lg md:text-xl mt-4 text-left indent-4">
-            Nuestro equipo de profesionales está comprometido en transformar tu
-            experiencia con nuestros servicios, agregando un toque humano en
-            cada proceso dentro de nuestra organización. En resumen, somos tu
-            socio confiable en la búsqueda de soluciones de conectividad de alta
-            calidad.
-          </span>
+          América.{" "}
+        </p>
+        <br />
+        <br />{" "}
+        <p className="text-lg md:text-xl mt-4 text-left indent-4">
+          Nuestro equipo de profesionales está comprometido en transformar tu
+          experiencia con nuestros servicios, agregando un toque humano en cada
+          proceso dentro de nuestra organización. En resumen, somos tu socio
+          confiable en la búsqueda de soluciones de conectividad de alta
+          calidad.
         </p>
       </motion.div>
     </section>

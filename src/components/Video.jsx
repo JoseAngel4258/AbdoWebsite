@@ -65,7 +65,7 @@ const Video = () => {
     <>
       <section
         ref={videoRef}
-        className="w-[100vw] h-[100vh] relative flex items-center justify-center snap-center"
+        className="w-[100vw] h-[105vh] relative flex items-center justify-center snap-center"
       >
         <div className="w-full h-full flex items-center justify-center bg-gray-950">
           <video

@@ -51,7 +51,7 @@ const InstallationService = () => {
   return (
     <section
       className="h-[650px] min-[390px]:h-[800px] lg:h-screen flex flex-col items-center snap-center text-lg px-6 mt-12 lg:mt-0"
-      id="instalacion"
+      id="services"
     >
       <motion.div
         ref={ref}
