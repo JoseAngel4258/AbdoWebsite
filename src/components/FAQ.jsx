@@ -33,70 +33,90 @@ const FAQ = () => {
           <div class="w-full lg:w-1/2 px-4 py-2">
             <details class="mb-4">
               <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4 cursor-pointer">
-                How Long is this site live?
+                ¿A qué zonas de Güigüe llega Abdo77?
               </summary>
 
               <span>
-                Laboris qui labore cillum culpa in sunt quis sint veniam. Dolore
-                ex aute deserunt esse ipsum elit aliqua. Aute quis minim velit
-                nostrud pariatur culpa magna in aute.
+                Los Garcías, Las Tiamitas, Guaica, El Venado, La Linda, Güigüe,
+                Inavi, Parque Azul, Buena Ventura, Parque Encantado, El Uno, La
+                Aduana, La Primavera, 5 de Julio, Pared de Piedra, el Trompillo
+                y Las Colonias.
               </span>
             </details>
             <details class="mb-4">
               <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4 cursor-pointer">
-                Can I install/upload anything I want on there?
+                ¿Cómo solicito mi solicitud de instalación?
               </summary>
 
               <span>
-                Laboris qui labore cillum culpa in sunt quis sint veniam. Dolore
-                ex aute deserunt esse ipsum elit aliqua. Aute quis minim velit
-                nostrud pariatur culpa magna in aute.
+                Puedes dirigirte a nuestra oficina principal, Inversiones ABDO
+                77 C.A., ubicada en la Avenida Miranda, Local N° 2, Güigüe (al
+                frente de MRW) o escribiéndonos a nuestro número de teléfono por
+                WhatsApp:{" "}
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://wa.me/584128322236"
+                  className="text-green-600 hover:text-green-700 transition-all"
+                >
+                  +58 412-8322236
+                </a>
               </span>
             </details>
             <details class="mb-4">
               <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4 cursor-pointer">
-                How can I migrate to another site?
+                ¿Cómo contacto al servicio técnico?
               </summary>
 
               <span>
-                Laboris qui labore cillum culpa in sunt quis sint veniam. Dolore
-                ex aute deserunt esse ipsum elit aliqua. Aute quis minim velit
-                nostrud pariatur culpa magna in aute.
+                Escribiéndonos a nuestro número de teléfono por WhatsApp:{" "}
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://wa.me/584128322236"
+                  className="text-green-600 hover:text-green-700 transition-all"
+                >
+                  +58 412-8322236
+                </a>
               </span>
             </details>
           </div>
           <div class="w-full lg:w-1/2 px-4 py-2">
             <details class="mb-4">
               <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4 cursor-pointer">
-                Can I change the domain you give me?
+                ¿Qué planes tienen para el área residencial y el área
+                corporativa?
               </summary>
 
               <span class="px-4 py-2">
-                Laboris qui labore cillum culpa in sunt quis sint veniam. Dolore
-                ex aute deserunt esse ipsum elit aliqua. Aute quis minim velit
-                nostrud pariatur culpa magna in aute.
+                Planes desde 30Mbps, 60Mbps hasta 100Mbps.
               </span>
             </details>
             <details class="mb-4">
               <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4 cursor-pointer">
-                How many sites I can create at once?
+                ¿Cómo puedo medir mi velocidad de internet?
               </summary>
 
               <span class="px-4 py-2">
-                Laboris qui labore cillum culpa in sunt quis sint veniam. Dolore
-                ex aute deserunt esse ipsum elit aliqua. Aute quis minim velit
-                nostrud pariatur culpa magna in aute.
+                Recomendamos que utilices esta página:
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.speedtest.net"
+                  className="text-blue-600 hover:text-blue-700 transition-all"
+                >
+                  +58 412-8322236
+                </a>
               </span>
             </details>
             <details class="mb-4">
               <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4 cursor-pointer">
-                How can I communicate with you?
+                ¿Cómo puedo bloquear gente de mi WiFi?
               </summary>
 
               <span class="px-4 py-2">
-                Laboris qui labore cillum culpa in sunt quis sint veniam. Dolore
-                ex aute deserunt esse ipsum elit aliqua. Aute quis minim velit
-                nostrud pariatur culpa magna in aute.
+                Existen varios métodos para ello, recomendamos que revises
+                nuestra sección de tutoriales para lista blanca y lista negra.
               </span>
             </details>
           </div>

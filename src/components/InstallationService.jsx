@@ -81,20 +81,21 @@ const InstallationService = () => {
             <ul className="list-disc list-inside font-medium text-xs text-justify md:text-xl min-[392px]:text-lg px-8 md:px-0">
               {selectedPlan === "fiber" ? (
                 <div>
-                  <li>Instalación completa por técnicos certificados</li>
+                  <li>Instalación completa por técnicos certificados.</li>
                   <li>
-                    Configuración personalizada de acuerdo a tus necesidades
+                    Configuración personalizada de acuerdo a tus necesidades.
                   </li>
                   <li>
-                    Pruebas exhaustivas para garantizar el funcionamiento óptimo
+                    Pruebas exhaustivas para garantizar el funcionamiento
+                    óptimo.
                   </li>
                 </div>
               ) : (
                 <div>
-                  <li>Instalación de antenas de alta calidad</li>
-                  <li>Configuración y alineación precisa</li>
-                  <li>Pruebas exhaustivas para garantizar la señal óptima</li>
-                  <li>Soporte técnico continuo</li>
+                  <li>Instalación de antenas de alta calidad.</li>
+                  <li>Configuración y alineación precisa.</li>
+                  <li>Pruebas exhaustivas para garantizar la señal óptima.</li>
+                  <li>Soporte técnico continuo.</li>
                 </div>
               )}
             </ul>

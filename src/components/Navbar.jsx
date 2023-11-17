@@ -36,13 +36,14 @@ const Navbar = () => {
             <div>
               {isInHeroSection ? (
                 <RouteLink to="/">
-                  <div onClick={handleScrollToTop}>
+                  <div className="w-[170px]" onClick={handleScrollToTop}>
                     {" "}
                     <img
-                      className="h-[42px] md:h-[57px] w-[123px] md:w-[170px] object-cover"
-                      src="/img/logoConContorno.png"
+                      className="w-[80px] object-cover"
+                      src="/img/abdo77.png"
                       alt="logo_abdo"
                     />
+                  
                   </div>
                 </RouteLink>
               ) : (

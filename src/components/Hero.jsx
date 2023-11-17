@@ -49,6 +49,7 @@ function Hero() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
+  const [iconSize, setIconSize] = useState(60);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -122,6 +123,25 @@ function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    // Función para cambiar el tamaño del ícono basado en el ancho de la pantalla
+    const handleResize = () => {
+      const screenSize = window.innerWidth;
+      if (screenSize < 768) {
+        setIconSize(40); // Tamaño para dispositivos móviles
+      } else {
+        setIconSize(60); // Tamaño para ordenadores
+      }
+    };
+
+    // Ejecutar la función al cargar y al cambiar el tamaño de la pantalla
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Eliminar el event listener al desmontar el componente
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className=" h-[100vh] w-screen relative group snap-center">
       <div
@@ -137,19 +157,19 @@ function Hero() {
         className="w-full h-full bg-center bg-cover duration-500 shadow-lg"
       ></div>
       {/* Left Arrow */}
-      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-10 rounded-full p-1 bg-black/40 hover:bg-white/70 text-2xl text-white outline-none cursor-default lg:cursor-pointer">
+      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[650%]  lg:translate-y-[-50%] left-5 lg:left-10 rounded-full p-1 bg-black/70 lg:bg-black/40 hover:bg-white/70 text-2xl text-white outline-none cursor-default lg:cursor-pointer">
         <MdOutlineKeyboardArrowLeft
           className="hover:text-red-600 duration-200"
           onClick={prevSlide}
-          size={60}
+          size={iconSize}
         />
       </div>
       {/* Right Arrow */}
-      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-10 rounded-full p-1 bg-black/40 hover:bg-white/70  text-2xl text-white outline-none cursor-default lg:cursor-pointer">
+      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[650%]  lg:translate-y-[-50%] right-5 lg:right-10 rounded-full p-1 bg-black/70 lg:bg-black/40 hover:bg-white/70 text-2xl text-white outline-none cursor-default lg:cursor-pointer">
         <MdOutlineKeyboardArrowRight
           className="hover:text-red-600 transition-all"
           onClick={nextSlide}
-          size={60}
+          size={iconSize}
         />
       </div>
       <div className="relative inset-x-0 bottom-[40px] flex justify-center">
