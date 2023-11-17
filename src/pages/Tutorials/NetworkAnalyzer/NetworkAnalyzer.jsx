@@ -3,6 +3,7 @@ import VideoTutorial from "../../../components/VideoTutorial";
 import Navbar from "../../../components/Navbar";
 import { motion, inView } from "framer-motion";
 import { down } from "../../../assets/motion";
+import { Link as RouteLink } from "react-router-dom";
 
 const NetworkAnalyzer = () => {
   return (
@@ -32,9 +33,9 @@ const NetworkAnalyzer = () => {
           className="flex items-center justify-center w-full"
         >
           <ul className="flex flex-row gap-4 mb-7">
-            <li>
-              <a href="#inicio">Abdo77 © 2023</a>
-            </li>
+            <RouteLink to="/">
+              <li onClick="scroll(0, 0);">Abdo77 © 2023</li>
+            </RouteLink>
             <li>
               <a href="">Privacidad y legal</a>
             </li>

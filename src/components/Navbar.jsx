@@ -32,7 +32,7 @@ const Navbar = () => {
             isInVideoSection ? "header-in-video" : ""
           } ${isInHeroSection ? "header-in-hero" : ""}`}
         >
-          <nav className="flex justify-between items-center font-inter w-screen">
+          <nav className="flex justify-between items-center w-screen">
             <div>
               {isInHeroSection ? (
                 <RouteLink to="/">
@@ -49,7 +49,7 @@ const Navbar = () => {
                 <RouteLink to="/">
                   <div onClick="scroll(0, 0);">
                     <img
-                      className="h-[42px] md:h-[57px] w-[123px] md:w-[170px] object-cover cursor-default lg:cursor-pointer"
+                      className="h-[42px] md:h-[57px] w-[123px] md:w-[170px] object-cover cursor-pointer lg:cursor-pointer"
                       src="/img/logo.png"
                       alt="logo_abdo"
                     />
@@ -129,7 +129,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={toggleVisibility}
-              className="relative h-8 w-8 text-3xl lg:hidden cursor-default lg:cursor-pointer"
+              className="relative h-8 w-8 text-3xl lg:hidden cursor-pointer lg:cursor-pointer"
             >
               <div
                 className={`absolute top-4 -mt-0.5 h-1 w-8 rounded  transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded  before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded  after:transition-all after:duration-500 after:content-[''] ${
@@ -144,43 +144,43 @@ const Navbar = () => {
       </section>
       <section
         id="mobile-menu"
-        className={`w-full min-h-screen absolute top-0 bg-navbar object-cover z-10 origin-top open-menu text-white ${` ${
+        className={`w-full min-h-screen absolute top-0 bg-white object-cover z-10 origin-top open-menu text-black ${` ${
           isVisible ? "flex" : "hidden"
         }`}`}
       >
         <button
           onClick={toggleVisibility}
-          className="absolute text-5xl pr-5 pt-5 md:pt-7 mb-12 right-0 cursor-default lg:cursor-pointer"
+          className="absolute text-5xl pr-5 pt-5 md:pt-7 mb-12 right-0 cursor-pointer lg:cursor-pointer"
         >
           X
         </button>
         <div className="flex flex-col w-full items-center justify-center min-h-[100vh]">
           <nav className="flex flex-col justify-center items-center w-full text-5xl text-center">
             {location.pathname === "/" ? (
-              <ul className="gap-7 flex flex-col text-shadow w-full">
+              <ul className="gap-7 flex flex-col w-full">
                 <a
-                  className="cursor-default"
+                  className="cursor-pointer"
                   onClick={toggleVisibility}
                   href="#home"
                 >
                   Inicio
                 </a>
                 <a
-                  className="cursor-default"
+                  className="cursor-pointer"
                   onClick={toggleVisibility}
                   href="#about"
                 >
                   Nosotros
                 </a>
                 <a
-                  className="cursor-default"
+                  className="cursor-pointer"
                   onClick={toggleVisibility}
                   href="#services"
                 >
                   Servicios
                 </a>
                 <a
-                  className="cursor-default"
+                  className="cursor-pointer"
                   onClick={toggleVisibility}
                   href="#plans"
                 >
@@ -188,15 +188,15 @@ const Navbar = () => {
                 </a>
                 <RouteLink to="/tutorials">
                   <a
-                    className="cursor-default blue-border"
+                    className="cursor-pointer text-white blue-border"
                     onClick="scroll(0, 0);"
                   >
                     Tutoriales
                   </a>
                 </RouteLink>
-                <li className="button-info-personal red-border">
+                <li className="button-info-personal text-white red-border">
                   <a
-                    className="cursor-default"
+                    className="cursor-pointer"
                     href="https://wa.me/584128322236"
                     target="_blank"
                     rel="noreferrer"
@@ -209,53 +209,53 @@ const Navbar = () => {
               <ul className="gap-9 drop-shadow-2xl opacity-100 text-shadow flex flex-col w-full ">
                 {location.pathname === "/tutorials" ? (
                   <RouteLink to="/">
-                    <li className="cursor-default" onClick="scroll(0, 0);">
+                    <li className="cursor-pointer" onClick="scroll(0, 0);">
                       Inicio
                     </li>
                   </RouteLink>
                 ) : (
                   <RouteLink to="/tutorials">
-                    <li className="cursor-default" onClick="scroll(0, 0);">
+                    <li className="cursor-pointer" onClick="scroll(0, 0);">
                       Menú
                     </li>
                   </RouteLink>
                 )}
                 <RouteLink to="/tutorials/vsol">
-                  <li className="cursor-default" onClick="scroll(0, 0);">
+                  <li className="cursor-pointer" onClick="scroll(0, 0);">
                     VSOL
                   </li>
                 </RouteLink>
 
                 <RouteLink to="/tutorials/adc">
                   {" "}
-                  <li className="cursor-default" onClick="scroll(0, 0);">
+                  <li className="cursor-pointer" onClick="scroll(0, 0);">
                     ADC
                   </li>
                 </RouteLink>
 
                 <RouteLink to="/tutorials/tenda">
                   {" "}
-                  <li className="cursor-default" onClick="scroll(0, 0);">
+                  <li className="cursor-pointer" onClick="scroll(0, 0);">
                     Tenda
                   </li>
                 </RouteLink>
 
                 <RouteLink to="/tutorials/speedtest">
                   {" "}
-                  <li className="cursor-default" onClick="scroll(0, 0);">
+                  <li className="cursor-pointer" onClick="scroll(0, 0);">
                     Speed Test
                   </li>
                 </RouteLink>
 
                 <RouteLink to="/tutorials/networkanalyzer">
-                  <li className="cursor-default" onClick="scroll(0, 0);">
+                  <li className="cursor-pointer" onClick="scroll(0, 0);">
                     Network Analyzer
                   </li>
                 </RouteLink>
 
                 <li className="button-info-personal red-border">
                   <a
-                    className="cursor-default"
+                    className="cursor-pointer"
                     target="_blank"
                     rel="noreferrer"
                     href="https://wa.me/584128322236"

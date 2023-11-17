@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Pacifico&family=Roboto&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.roboto {
+  font-family: "Roboto";
+}
 
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
@@ -220,10 +225,10 @@ html {
 
 .navigation ul li:hover {
   cursor: pointer;
-  background-color: rgba(45, 45, 45, 0.4);
+  background-color: rgba(37, 0, 183, 0.867);
   transition: 0.385s ease;
   border-radius: 4px;
-  box-shadow: 5px 5px #888888;
+  box-shadow: 5px 5px rgb(15, 0, 110);
   color: white;
 }
 
@@ -285,13 +290,6 @@ html {
   animation: open-menu 0.5s ease-in forwards;
 }
 
-.bg-navbar {
-  background-image: url("/img/15.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .text-shadow {
   text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.6);
 }
@@ -302,6 +300,11 @@ html {
 }
 
 .blue-border {
-  text-shadow: 1px 1px 0 #0400ff, -1px -1px 0 #0400ff, 1px -1px 0 #0400ff,
+  text-shadow: 1px 1px 0 #1410ff, -1px -1px 0 #1410ff, 1px -1px 0 #0400ff,
     -1px 1px 0 #0400ff;
+}
+
+.position {
+  position: absolute;
+  bottom: 0;
 }
