@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const FAQ = () => {
   return (
-    <section class="text-gray-900  xl:h-screen h-[900px] flex flex-col items-center justify-center snap-center">
+    <section className="text-gray-900 xl:h-screen  flex flex-col items-center justify-center snap-center">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -19,23 +19,22 @@ const FAQ = () => {
           hidden: { opacity: 0, y: -100 },
           visible: { opacity: 1, y: 0 },
         }}
-        class="container px-5 py-24 mx-auto"
+        className="container px-5 py-24 mx-auto"
       >
-        <div class="text-center mb-20">
-          <p class="text-base font-medium leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+        <div className="text-center mb-20">
+          <p className="text-base font-medium leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
             Respondemos a tus
           </p>
-          <h1 class="sm:text-5xl text-3xl font-medium text-center title-font text-gray-900 mb-4">
+          <h1 className="md:text-5xl text-3xl font-bold text-center title-font text-gray-900 mb-4">
             Preguntas Frecuentes
           </h1>
         </div>
-        <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-          <div class="w-full lg:w-1/2 px-4 py-2">
-            <details class="mb-4">
-              <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4 cursor-pointer">
+        <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 text-justify">
+          <div className="w-full lg:w-1/2 px-4 py-2">
+            <details className="mb-4">
+              <summary className="font-semibold  bg-gray-200 rounded-md py-2 px-4 cursor-pointer">
                 ¿A qué zonas de Güigüe llega Abdo77?
               </summary>
-
               <span>
                 Los Garcías, Las Tiamitas, Guaica, El Venado, La Linda, Güigüe,
                 Inavi, Parque Azul, Buena Ventura, Parque Encantado, El Uno, La
@@ -61,6 +60,7 @@ const FAQ = () => {
                 >
                   +58 412-8322236
                 </a>
+                .
               </span>
             </details>
             <details class="mb-4">
@@ -78,10 +78,11 @@ const FAQ = () => {
                 >
                   +58 412-8322236
                 </a>
+                .
               </span>
             </details>
           </div>
-          <div class="w-full lg:w-1/2 px-4 py-2">
+          <div className="w-full lg:w-1/2 px-4 py-2">
             <details class="mb-4">
               <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4 cursor-pointer">
                 ¿Qué planes tienen para el área residencial y el área
@@ -107,6 +108,7 @@ const FAQ = () => {
                 >
                   +58 412-8322236
                 </a>
+                .
               </span>
             </details>
             <details class="mb-4">

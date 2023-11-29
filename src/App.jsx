@@ -4,6 +4,7 @@ import store from "./components/store";
 import About from "./components/About";
 
 import Hero from "./components/Hero";
+
 import InstallationService from "./components/InstallationService";
 import Navbar from "./components/Navbar.jsx";
 import PlansCardHeizahn from "./components/PlansCardHeaizahn";
@@ -22,7 +23,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className="h-[100vh] lg:snap-y lg:snap-mandatory overflow-x-hidden scroll-smooth roboto bg-gradient-to-t from-slate-200 to-white">
+        <div className="h-[100vh] lg:snap-y lg:snap-mandatory overflow-x-hidden scroll-smooth roboto bg-gray-200">
           <Routes>
             <Route
               path="/"
@@ -30,7 +31,7 @@ const App = () => {
               element={
                 <>
                   <Navbar />
-                  <section id="home">
+                  <section className="snap-center" id="home">
                     <Hero />
                   </section>
 
@@ -46,7 +47,7 @@ const App = () => {
                   <section id="faq">
                     <FAQ />
                   </section>
-                  <section>
+                  <section id="contact">
                     <Contact />
                   </section>
                 </>

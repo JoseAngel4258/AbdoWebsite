@@ -64,14 +64,16 @@ const About = () => {
           hidden: { opacity: 0, x: -80 },
           visible: { opacity: 1, x: 0 },
         }}
-        className="lg:w-1/2 lg:h-full flex flex-col justify-center items-center px-12 md:p-12 -mt-16 lg:mt-0 mb-32 lg:mb-0"
+        className="lg:w-1/2 lg:h-full flex flex-col justify-center items-center px-12 md:p-14 -mt-16 lg:mt-0 mb-32 lg:mb-0"
       >
-        <h2 className="text-3xl md:text-5xl font-bold mb-10">¿Quiénes Somos?</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-10">
+          ¿Quiénes Somos?
+        </h2>
         <p className="text-lg md:text-xl mt-4 text-justify font-medium">
           En nuestra empresa, nos destacamos por ofrecer calidad e innovación en
-          nuestros productos y servicios. Con más de 15 años de experiencia,
-          hemos estado superando las expectativas de hogares y empresas en toda
-          América.
+          nuestros productos y servicios. Con más de 7 años de experiencia,
+          hemos estado superando las expectativas de hogares y empresas en todo
+          Güigüe y pueblos aledaños.
         </p>
         <br />
         <br />{" "}
@@ -84,7 +86,7 @@ const About = () => {
         </p>
       </motion.div>
 
-      <div className="hidden lg:flex justify-center items-center">
+      <div className="hidden lg:flex justify-center items-center hover:scale-110 transition duration-500">
         <motion.img
           initial="hidden"
           whileInView="visible"

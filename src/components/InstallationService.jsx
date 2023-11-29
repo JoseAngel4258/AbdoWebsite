@@ -3,32 +3,28 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const InstallationService = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: false, // Configura triggerOnce en false para animar cada vez que se hace visible
-  });
-
   const [selectedPlan, setSelectedPlan] = useState("fiber");
-  const [title, setTitle] = useState("Instalación de Fibra"); // Título inicial
 
   const handlePlanChange = (plan) => {
     setSelectedPlan(plan);
-    // Actualizar el título según el plan seleccionado
-    setTitle(
-      plan === "fiber" ? "Instalación de Fibra" : "Instalación de Antena"
-    );
   };
 
-  // Establece la fuente de la imagen en función de selectedPlan
-  const imageSource =
-    selectedPlan === "fiber"
-      ? "/img/installation_fibra.jpg"
-      : "/img/installation_antenna.jpg";
+  const getTitleAndImage = (plan) => {
+    return {
+      title:
+        plan === "fiber" ? "Instalación de Fibra" : "Instalación de Antena",
+      imageSource:
+        plan === "fiber"
+          ? "/img/installation_fibra.jpg"
+          : "/img/installation_antenna.jpg",
+      serviceText:
+        plan === "fiber"
+          ? "Nuestro servicio de instalación profesional incluye:"
+          : "Nuestro servicio de instalación de antenas incluye:",
+    };
+  };
 
-  // Define los textos según el plan seleccionado
-  const serviceText =
-    selectedPlan === "fiber"
-      ? "Nuestro servicio de instalación profesional incluye:"
-      : "Nuestro servicio de instalación de antenas incluye:";
+  const { title, imageSource, serviceText } = getTitleAndImage(selectedPlan);
 
   return (
     <section
@@ -69,13 +65,11 @@ const InstallationService = () => {
             <h2
               className={`text-2xl min-[392px]:text-3xl md:text-5xl px-8 md:px-0 text-justify font-semibold ${
                 selectedPlan === "fiber" ? "text-red-600" : "text-blue-600"
-              }`} // Cambia el color del título
+              }`}
             >
               {title}
             </h2>
-            <p
-              className="text-gray-900 mb-4 text-sm min-[392px]:text-base md:text-lg my-3 md:my-6" // Tamaño y color del texto
-            >
+            <p className="text-gray-900 mb-4 text-sm min-[392px]:text-base md:text-lg my-3 md:my-6">
               {serviceText}
             </p>
             <ul className="list-disc list-inside font-medium text-xs text-justify md:text-xl min-[392px]:text-lg px-8 md:px-0">
@@ -118,11 +112,11 @@ const InstallationService = () => {
             hidden: { opacity: 0, x: -100 },
             visible: { opacity: 1, x: 0 },
           }}
-          className={` ${
+          className={`${
             selectedPlan === "fiber"
-              ? "bg-red-600 text-white" // Cambia el color del botón a rojo
+              ? "bg-red-600 text-white"
               : "bg-white text-black border-box"
-          } px-4 py-2 rounded-2xl font-semibold cursor-pointer`}
+          } px-4 py-2 rounded-2xl text-[14px] md:text-[18px] font-semibold cursor-pointer`}
           onClick={() => handlePlanChange("fiber")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
@@ -148,7 +142,7 @@ const InstallationService = () => {
             selectedPlan === "antena"
               ? "bg-blue-600 text-white"
               : "bg-white text-black border-box"
-          } px-4 py-2 rounded-2xl font-semibold cursor-pointer`}
+          } px-4 py-2 rounded-2xl text-[14px] md:text-[18px] font-semibold cursor-pointer`}
           onClick={() => handlePlanChange("antena")}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}

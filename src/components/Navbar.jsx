@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link as RouteLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
   const handleScrollToTop = () => {
     window.scrollTo(0, 0);
   };
@@ -24,6 +30,21 @@ const Navbar = () => {
     setIsVisible(!isVisible);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const menu = document.getElementById("dropdownMenu");
+      if (menu && !menu.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <section>
@@ -32,34 +53,20 @@ const Navbar = () => {
             isInVideoSection ? "header-in-video" : ""
           } ${isInHeroSection ? "header-in-hero" : ""}`}
         >
-          <nav className="flex justify-between items-center w-screen">
+          <nav className="flex justify-between items-center w-screen h-[55px]">
             <div>
-              {isInHeroSection ? (
-                <RouteLink to="/">
-                  <div className="w-[170px]" onClick={handleScrollToTop}>
-                    {" "}
-                    <img
-                      className="w-[80px] object-cover"
-                      src="/img/abdo77.png"
-                      alt="logo_abdo"
-                    />
-                  
-                  </div>
-                </RouteLink>
-              ) : (
-                <RouteLink to="/">
-                  <div onClick="scroll(0, 0);">
-                    <img
-                      className="h-[42px] md:h-[57px] w-[123px] md:w-[170px] object-cover cursor-pointer lg:cursor-pointer"
-                      src="/img/logo.png"
-                      alt="logo_abdo"
-                    />
-                  </div>
-                </RouteLink>
-              )}
+              <RouteLink to="/">
+                <div onClick="scroll(0, 0);">
+                  <img
+                    className="w-[123px] md:w-[220px] object-cover cursor-pointer lg:cursor-pointer"
+                    src="/img/logo.jpg"
+                    alt="logo_abdo"
+                  />
+                </div>
+              </RouteLink>
             </div>
 
-            <div className="navigation lg:flex hidden">
+            <div className="navigation lg:flex hidden" id="dropdownMenu">
               {location.pathname === "/" ? (
                 <ul className="gap-4">
                   <a href="#home">
@@ -74,9 +81,54 @@ const Navbar = () => {
                   <a href="#plans">
                     <li className="relative z-10 peer">Planes</li>
                   </a>
-                  <RouteLink to="/tutorials">
-                    <li onClick="scroll(0, 0);">Tutoriales</li>
-                  </RouteLink>
+
+                  <li className="relative">
+                    <div className="flex items-center justify-center group w-full h-full">
+                      <span
+                        className="mr-1 cursor-pointer"
+                        onClick={toggleDropdown}
+                      >
+                        Ayuda y soporte
+                      </span>
+                      <svg
+                        className="fill-current h-4 w-4 cursor-pointer"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        onClick={toggleDropdown}
+                      >
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                      <ul
+                        className={`absolute top-9 flex flex-col gap-2 text-gray-700 pt-1 bg-white rounded-lg shadow-md p-2 mt-2 transition-opacity duration-500 ease-in-out ${
+                          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                        }`}
+                      >
+                        <li
+                          className="py-2 px-4 text-black rounded-md text-center"
+                          onClick={toggleDropdown}
+                        >
+                          <a href="#faq">Preguntas frecuentes</a>
+                        </li>
+                        <li
+                          className="py-2 px-4 text-black rounded-md text-center"
+                          onClick={toggleDropdown}
+                        >
+                          <a href="#contact">Contacto</a>
+                        </li>
+                        <RouteLink to="/tutorials">
+                          <li
+                            className="py-2 px-4 text-black rounded-md text-center"
+                            onClick={() => {
+                              setIsOpen(false);
+                              window.scrollTo(0, 0);
+                            }}
+                          >
+                            <a>Tutoriales</a>
+                          </li>
+                        </RouteLink>
+                      </ul>
+                    </div>
+                  </li>
                 </ul>
               ) : (
                 <ul className="gap-4">
@@ -115,7 +167,7 @@ const Navbar = () => {
                 </ul>
               )}
             </div>
-            <div className="navigation w-[170px] lg:flex hidden">
+            <div className="navigation w-[123px] md:w-[220px] lg:flex hidden">
               <ul>
                 <li className="button-info-personal text-no-shadow shadow-xl hover:shadow-transparent">
                   <a
@@ -187,15 +239,29 @@ const Navbar = () => {
                 >
                   Planes
                 </a>
+                <a
+                  className="cursor-pointer"
+                  onClick={toggleVisibility}
+                  href="#faq"
+                >
+                  Preguntas frecuentes
+                </a>
+                <a
+                  className="cursor-pointer"
+                  onClick={toggleVisibility}
+                  href="#contact"
+                >
+                  Contacto
+                </a>
                 <RouteLink to="/tutorials">
                   <a
-                    className="cursor-pointer text-white blue-border"
+                    className="cursor-pointer text-blue-600"
                     onClick="scroll(0, 0);"
                   >
                     Tutoriales
                   </a>
                 </RouteLink>
-                <li className="button-info-personal text-white red-border">
+                <li className="button-info-personal text-red-600">
                   <a
                     className="cursor-pointer"
                     href="https://wa.me/584128322236"
@@ -207,7 +273,7 @@ const Navbar = () => {
                 </li>
               </ul>
             ) : (
-              <ul className="gap-9 drop-shadow-2xl opacity-100 text-shadow flex flex-col w-full ">
+              <ul className="gap-9 drop-shadow-2xl opacity-100 flex flex-col w-full">
                 {location.pathname === "/tutorials" ? (
                   <RouteLink to="/">
                     <li className="cursor-pointer" onClick="scroll(0, 0);">
@@ -254,7 +320,7 @@ const Navbar = () => {
                   </li>
                 </RouteLink>
 
-                <li className="button-info-personal red-border">
+                <li className="button-info-personal text-red-600">
                   <a
                     className="cursor-pointer"
                     target="_blank"
