@@ -89,7 +89,7 @@ function Hero() {
         />
       </div>
       {/* Left Arrow */}
-      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[650%] lg:translate-y-[-50%] left-5 lg:left-10 rounded-full p-1 bg-black/70 lg:bg-black/40 hover:bg-white/70 text-2xl text-white outline-none cursor-pointer">
+      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[577%] lg:translate-y-[-50%] left-5 lg:left-10 rounded-full p-1 bg-black/70 lg:bg-black/40 hover:bg-white/70 text-2xl text-white outline-none cursor-pointer">
         <MdOutlineKeyboardArrowLeft
           className="hover:text-red-600 duration-200"
           onClick={prevSlide}
@@ -97,14 +97,14 @@ function Hero() {
         />
       </div>
       {/* Right Arrow */}
-      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[650%] lg:translate-y-[-50%] right-5 lg:right-10 rounded-full p-1 bg-black/70 lg:bg-black/40 hover:bg-white/70 text-2xl text-white outline-none cursor-pointer">
+      <div className="md:opacity-0 group-hover:opacity-100 transition duration-300 absolute top-[50%] -translate-x-0 translate-y-[577%] lg:translate-y-[-50%] right-5 lg:right-10 rounded-full p-1 bg-black/70 lg:bg-black/40 hover:bg-white/70 text-2xl text-white outline-none cursor-pointer">
         <MdOutlineKeyboardArrowRight
           className="hover:text-red-600 transition-all"
           onClick={nextSlide}
           size={iconSize}
         />
       </div>
-      <div className="relative inset-x-0 bottom-[40px] flex justify-center">
+      <div className="relative inset-x-0 bottom-[85px] md:bottom-[40px] flex justify-center">
         {slides.map((_, slideIndex) => (
           <div
             key={slideIndex}
