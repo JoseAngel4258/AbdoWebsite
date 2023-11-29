@@ -181,7 +181,7 @@ const PlansCardHeizahn = () => {
               selectedPlan === "fiber"
                 ? "bg-red-600 text-white"
                 : "bg-white text-black border-box"
-            } px-4 py-2 rounded-2xl text-[14px] md:text-[18px] font-semibold   cursor-pointer`}
+            } px-4 py-2 rounded-2xl text-[12px] md:text-[18px] font-semibold   cursor-pointer`}
             onClick={() => handlePlanChange("fiber")}
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.97 }}
@@ -207,7 +207,7 @@ const PlansCardHeizahn = () => {
               selectedPlan === "antena"
                 ? "bg-blue-600 text-white"
                 : "bg-white text-black border-box"
-            } px-4 py-2 rounded-2xl text-[14px] md:text-[18px] font-semibold cursor-pointer`}
+            } px-4 py-2 rounded-2xl text-[12px] md:text-[18px] font-semibold cursor-pointer`}
             onClick={() => handlePlanChange("antena")}
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.97 }}
