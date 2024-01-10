@@ -15,7 +15,7 @@ const InstallationService = () => {
         plan === "fiber" ? "Instalación de Fibra" : "Instalación de Antena",
       imageSource:
         plan === "fiber"
-          ? "/img/installation_fibra.jpg"
+          ? "/img/installation_fibra.jpeg"
           : "/img/installation_antenna.jpg",
       serviceText:
         plan === "fiber"
