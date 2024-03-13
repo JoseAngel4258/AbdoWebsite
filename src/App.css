@@ -218,6 +218,20 @@ html {
   list-style: none;
 }
 
+.a {
+  padding: 4px 8px;
+  position: relative;
+}
+
+.a:hover{
+  cursor: pointer;
+  background-color: #ff0000;
+  transition: 0.385s ease;
+  border-radius: 8px;
+  box-shadow: 5px 5px rgb(110, 0, 0);
+  color: white;
+}
+
 .navigation ul li {
   padding: 4px 8px;
   position: relative;
@@ -225,10 +239,10 @@ html {
 
 .navigation ul li:hover {
   cursor: pointer;
-  background-color: #2500b7;
+  background-color: #ff0000;
   transition: 0.385s ease;
-  border-radius: 4px;
-  box-shadow: 5px 5px rgb(15, 0, 110);
+  border-radius: 8px;
+  box-shadow: 5px 5px rgb(110, 0, 0);
   color: white;
 }
 

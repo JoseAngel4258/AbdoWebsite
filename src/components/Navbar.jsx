@@ -99,22 +99,26 @@ const Navbar = () => {
                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                       </svg>
                       <ul
-                        className={`absolute top-9 flex flex-col gap-2 text-gray-700 pt-1 bg-white rounded-lg shadow-md p-2 mt-2 transition-opacity duration-500 ease-in-out ${
+                        className={`absolute top-10 flex flex-col gap-2 text-gray-700 pt-1 bg-white rounded-lg shadow-md p-2 mt-2 transition-opacity duration-500 ease-in-out ${
                           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
                         }`}
                       >
-                        <li
-                          className="py-2 px-4 text-black rounded-md text-center"
+                        <a
+                          href="#faq"
+                          className="py-2 px-4 text-black rounded-md text-center a"
                           onClick={toggleDropdown}
                         >
-                          <a href="#faq">Preguntas frecuentes</a>
-                        </li>
-                        <li
-                          className="py-2 px-4 text-black rounded-md text-center"
+                          Preguntas frecuentes
+                        </a>
+
+                        <a
+                          href="#contact"
+                          className="py-2 px-4 text-black rounded-md text-center a"
                           onClick={toggleDropdown}
                         >
-                          <a href="#contact">Contacto</a>
-                        </li>
+                          Contacto
+                        </a>
+
                         <RouteLink to="/tutorials">
                           <li
                             className="py-2 px-4 text-black rounded-md text-center"
