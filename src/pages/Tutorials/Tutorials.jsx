@@ -12,8 +12,8 @@ const Home = () => {
       <Navbar />
       <section>
         <div className="h-[155px]" />
-        <div className="flex items-center justify-center w-screen">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 flex-wrap px-12">
+        <div className="flex items-center justify-center w-[100%]">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 flex-wrap px-12">
             <Card
               tituloTutorial="VSOL"
               tutorialImg="/img/vsol.png"

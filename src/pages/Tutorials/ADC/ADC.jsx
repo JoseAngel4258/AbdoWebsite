@@ -10,15 +10,15 @@ const ADC = () => {
     <>
       <Navbar />
       <section className=" flex flex-col gap-20 justify-center">
-        <div className="h-12"></div>
+        <div className="h-20" />
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl text-center md:text-[36px] md:leading-[41px] lg:leading-none">
+          <h1 className="text-2xl font-semibold md:text-[36px] md:leading-[41px] lg:leading-none">
             Cambio de nombre Router ADC
           </h1>
 
           <VideoTutorial videoSrc="https://www.youtube.com/embed/jte-J2n8WuE?si=uibbHUTmr0-c9Nav" />
 
-          <p className="text-lg text-justify mx-auto px-5 lg:px-[100px]">
+          <p className="text-lg text-justify mx-auto px-5 w-[40%]">
             Para comenzar, necesitarás ingresar a la dirección de administración
             del router, que es 192.128.1.1 en tu navegador web.
             <br />
@@ -30,13 +30,13 @@ const ADC = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl text-center md:text-[36px] md:leading-[41px] lg:leading-none">
+          <h1 className="text-2xl font-semibold md:text-[36px] md:leading-[41px] lg:leading-none">
             Cambio de contraseña Router ADC
           </h1>
 
           <VideoTutorial videoSrc="https://www.youtube.com/embed/M8O8jKNyQpI?si=kZkAhVsSPEmJ93xK" />
 
-          <p className="text-lg text-justify mx-auto px-5 lg:px-[100px]">
+          <p className="text-lg text-justify mx-auto px-5 w-[40%]">
             Para comenzar, necesitarás ingresar a la dirección de administración
             del router, que es 192.168.1.1 en tu navegador web.
             <br />

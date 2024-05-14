@@ -69,7 +69,7 @@ const Navbar = () => {
             <div className="navigation lg:flex hidden" id="dropdownMenu">
               {location.pathname === "/" ? (
                 <ul className="gap-4">
-                  <a href="#home">
+                  <a href="#inicio">
                     <li className="shadow-text">Inicio</li>
                   </a>
                   <a href="#about">
@@ -81,6 +81,18 @@ const Navbar = () => {
                   <a href="#plans">
                     <li className="relative z-10 peer">Planes</li>
                   </a>
+
+                  <RouteLink to="/tutorials">
+                    <li
+                      className="py-2 px-4 rounded-md text-center"
+                      onClick={() => {
+                        setIsOpen(false);
+                        window.scrollTo(0, 0);
+                      }}
+                    >
+                      <a>Tutoriales</a>
+                    </li>
+                  </RouteLink>
 
                   <li className="relative">
                     <div className="flex items-center justify-center group w-full h-full">
@@ -118,18 +130,6 @@ const Navbar = () => {
                         >
                           Contacto
                         </a>
-
-                        <RouteLink to="/tutorials">
-                          <li
-                            className="py-2 px-4 text-black rounded-md text-center"
-                            onClick={() => {
-                              setIsOpen(false);
-                              window.scrollTo(0, 0);
-                            }}
-                          >
-                            <a>Tutoriales</a>
-                          </li>
-                        </RouteLink>
                       </ul>
                     </div>
                   </li>
@@ -162,7 +162,7 @@ const Navbar = () => {
 
                   <RouteLink to="/tutorials/speedtest">
                     {" "}
-                    <li onClick="scroll(0, 0);">Speed Test</li>
+                    <li onClick="scroll(0, 0);">SpeedTest</li>
                   </RouteLink>
 
                   <RouteLink to="/tutorials/networkanalyzer">

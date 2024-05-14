@@ -10,7 +10,7 @@ const SpeedTest = () => {
     <>
       <Navbar />
       <section className=" flex flex-col gap-20 justify-center">
-        <div className="h-12"></div>
+      <div className="h-20"/>
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-2xl text-center md:text-[36px] md:leading-[41px] lg:leading-none">
             Prueba de velocidad de internet
@@ -18,7 +18,7 @@ const SpeedTest = () => {
 
           <VideoTutorial videoSrc="https://www.youtube.com/embed/uWy351tlg5A?si=rf62kbQGcUXaMJCD" />
 
-          <p className="text-lg text-justify mx-auto px-5 lg:px-[100px]">
+          <p className="text-lg text-justify mx-auto px-5 w-[40%]">
             En este video, te mostraremos cómo realizar una prueba de velocidad
             a internet, ¡comencemos!
             <br />

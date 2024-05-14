@@ -9,7 +9,7 @@ const Card = ({
 }) => {
   return (
     <>
-      <div className="bg-slate-800 h-[500px] min-[375px]:h-[530px] md:h-[620px] md:w-[320px] lg:h-[580px] lg:w-[400px] rounded-2xl text-white">
+      <div className="bg-slate-800 h-[500px] min-[375px]:h-[530px] md:h-[620px] md:w-[320px] lg:h-[550px] lg:w-[370px] rounded-2xl text-white">
         <div className="w-full h-full">
           <img
             className="w-full h-[38%] rounded-t-2xl object-cover"
@@ -20,7 +20,7 @@ const Card = ({
             <h1 className="text-2xl min-[375px]:text-3xl md:text-4xl font-semibold mt-6 md:mt-8">
               {tituloTutorial}
             </h1>
-            <p className="text-sm min-[375px]:text-base md:text-lg my-6 md:my-8">
+            <p className="text-sm min-[375px]:text-base md:text-lg my-6 md:my-8 text-left">
               {tutorialTexto}
             </p>
             <RouteLink to={TutorialLinks}>

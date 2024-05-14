@@ -75,8 +75,8 @@ const About = () => {
           hemos estado superando las expectativas de hogares y empresas en todo
           Güigüe y pueblos aledaños.
         </p>
+
         <br />
-        <br />{" "}
         <p className="text-lg md:text-xl mt-4 text-justify font-medium">
           Nuestro equipo de profesionales está comprometido en transformar tu
           experiencia con nuestros servicios, agregando un toque humano en cada
