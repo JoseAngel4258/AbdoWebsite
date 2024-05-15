@@ -41,15 +41,15 @@ const VSOL = () => {
     <>
       <Navbar />
       <section className="flex flex-col gap-20 justify-center">
-        <div className="h-20"/>
+        <div className="h-20" />
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl font-semibold md:text-[36px] md:leading-[41px] lg:leading-none">
+          <h1 className="text-2xl font-semibold px-7 text-center md:text-[36px] md:leading-[41px] lg:leading-none">
             Cambio de contraseña Router VSOL V2804AC-Z
           </h1>
 
           <VideoTutorial videoSrc="https://www.youtube.com/embed/0W5URivwx6c?si=k_e6wG3CfQxQXfKA" />
 
-          <p className="text-lg text-justify mx-auto px-5 w-[40%]">
+          <p className="text-lg text-justify mx-auto px-5 w-[88%] lg:w-[40%]">
             Para comenzar, necesitarás ingresar a la dirección de administración
             del router, que es 192.168.1.1 en tu navegador web.
             <br />
@@ -65,12 +65,12 @@ const VSOL = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl font-semibold md:text-[36px] md:leading-[41px] lg:leading-none">
+          <h1 className="text-2xl font-semibold px-7 text-center md:text-[36px] md:leading-[41px] lg:leading-none">
             Tutorial de lista blanca VSOL V2804AC-Z
           </h1>
 
           <VideoTutorial videoSrc="https://www.youtube.com/embed/XQNy9D67DqE?si=KCg0GlOcc9lm7Ql7" />
-          <p className="text-lg text-justify mx-auto px-5 w-[40%]">
+          <p className="text-lg text-justify mx-auto px-5 w-[88%] lg:w-[40%]">
             Para comenzar, necesitarás ingresar a la dirección de administración
             del router, que es 192.168.1.1 en tu navegador web. <br />
             <br />
@@ -80,11 +80,11 @@ const VSOL = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center ">
-          <h1 className="text-2xl font-semibold md:text-[36px] md:leading-[41px] lg:leading-none">
+          <h1 className="text-2xl font-semibold px-7 text-center md:text-[36px] md:leading-[41px] lg:leading-none">
             Cambio de clave Router VSOL V2802DAC
           </h1>
           <VideoTutorial videoSrc="https://www.youtube.com/embed/yVC7KY3KPPw?si=z_nr3fILEH4Un774" />
-          <p className="text-lg text-justify mx-auto px-5 w-[40%]">
+          <p className="text-lg text-justify mx-auto px-5 w-[88%] lg:w-[40%]">
             Para comenzar, necesitarás ingresar a la dirección de administración
             del router, que es 192.168.1.1 en tu navegador web.
             <br />

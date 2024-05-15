@@ -69,7 +69,7 @@ const About = () => {
         <h2 className="text-3xl md:text-5xl font-bold mb-10">
           ¿Quiénes Somos?
         </h2>
-        <p className="text-lg md:text-xl mt-4 text-justify font-medium">
+        <p className="text-lg md:text-xl mt-4 font-medium">
           En nuestra empresa, nos destacamos por ofrecer calidad e innovación en
           nuestros productos y servicios. Con más de 7 años de experiencia,
           hemos estado superando las expectativas de hogares y empresas en todo
@@ -77,7 +77,7 @@ const About = () => {
         </p>
 
         <br />
-        <p className="text-lg md:text-xl mt-4 text-justify font-medium">
+        <p className="text-lg md:text-xl mt-4 font-medium">
           Nuestro equipo de profesionales está comprometido en transformar tu
           experiencia con nuestros servicios, agregando un toque humano en cada
           proceso dentro de nuestra organización. En resumen, somos tu socio

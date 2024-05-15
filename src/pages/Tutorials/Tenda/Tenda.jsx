@@ -12,13 +12,13 @@ const Tenda = () => {
       <section className=" flex flex-col gap-20 justify-center">
         <div className="h-20" />
         <div className="flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-semibold md:text-[36px] md:leading-[41px] lg:leading-none">
+          <h1 className="text-2xl font-semibold px-7 text-center md:text-[36px] md:leading-[41px] lg:leading-none">
             Cambio de nombre Router Tenda
           </h1>
 
           <VideoTutorial videoSrc="https://www.youtube.com/embed/aQR4s2ouWdk?si=A5oODUqyfTqp27Wh" />
 
-          <p className="text-lg text-justify mx-auto px-5 w-[40%]">
+          <p className="text-lg text-justify mx-auto px-5 w-[88%] lg:w-[40%]">
             Para comenzar, necesitarás ingresar a la dirección de administración
             del router, que es 'tendawifi.com' en tu navegador web.
             <br />

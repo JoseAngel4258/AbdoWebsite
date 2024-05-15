@@ -10,15 +10,15 @@ const NetworkAnalyzer = () => {
     <>
       <Navbar />
       <section className="flex flex-col gap-20 justify-center">
-      <div className="h-20"/>
+        <div className="h-20" />
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl text-center md:text-[36px] md:leading-[41px] lg:leading-none">
+          <h1 className="text-2xl font-semibold px-7 text-center md:text-[36px] md:leading-[41px] lg:leading-none">
             Network Analyzer/Disositivos Conectados
           </h1>
 
           <VideoTutorial videoSrc="https://www.youtube.com/embed/zCNy4ySx4lo" />
 
-          <p className="text-lg text-justify mx-auto px-5 w-[40%]">
+          <p className="text-lg text-justify mx-auto px-5 w-[88%] lg:w-[40%]">
             En este video, te mostraremos cómo realizar un análisis de tu red
             WiFi para saber cuantos y cuales dispositivos se están conectados a
             ella, ¡comencemos!
